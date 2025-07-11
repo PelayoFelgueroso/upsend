@@ -1,0 +1,58 @@
+{
+  "title": "E-Mail-Vorlagen",
+  "subtitle": "Erstellen und verwalten Sie Ihre E-Mail-Vorlagen",
+  "newTemplate": "Neue Vorlage",
+  "allTemplates": "Alle Vorlagen",
+  "searchPlaceholder": "Vorlagen suchen...",
+  "noTemplates": "Keine Vorlagen gefunden",
+  "createFirst": "Erstellen Sie Ihre erste Vorlage, um zu beginnen",
+  "form": {
+    "templateDetails": "Vorlagen-Details",
+    "templateDetailsDesc": "Grundlegende Informationen zu Ihrer E-Mail-Vorlage",
+    "templateName": "Vorlagenname",
+    "templateNamePlaceholder": "Vorlagenname eingeben",
+    "emailSubject": "E-Mail-Betreff",
+    "emailSubjectPlaceholder": "E-Mail-Betreff eingeben",
+    "templateType": "Vorlagentyp",
+    "templateStatus": "Vorlagenstatus",
+    "selectType": "Vorlagentyp auswählen",
+    "selectStatus": "Vorlagenstatus auswählen",
+    "emailContent": "E-Mail-Inhalt",
+    "emailContentDesc": "Schreiben Sie Ihren E-Mail-Inhalt in HTML oder Klartext",
+    "content": "Inhalt",
+    "contentPlaceholder": "Geben Sie hier Ihren E-Mail-Inhalt ein...",
+    "preview": "Vorschau",
+    "previewDesc": "Sehen Sie, wie Ihre E-Mail für Empfänger aussehen wird",
+    "subjectPreview": "Betreff: {{subject}}",
+    "contentPreview": "Ihr E-Mail-Inhalt wird hier angezeigt...",
+    "saveTemplate": "Vorlage speichern",
+    "saveChanges": "Änderungen speichern",
+    "sendTest": "Test-E-Mail senden",
+    "testEmailSent": "Test-E-Mail erfolgreich gesendet",
+    "templateSaved": "Vorlage erfolgreich gespeichert",
+    "templateUpdated": "Vorlage erfolgreich aktualisiert",
+    "templateDeleted": "Vorlage erfolgreich gelöscht"
+  },
+  "types": {
+    "transactional": "Transaktional",
+    "marketing": "Marketing",
+    "notification": "Benachrichtigung"
+  },
+  "status": {
+    "active": "Aktiv",
+    "draft": "Entwurf",
+    "archived": "Archiviert"
+  },
+  "actions": {
+    "edit": "Bearbeiten",
+    "duplicate": "Duplizieren",
+    "delete": "Löschen",
+    "activate": "Aktivieren",
+    "archive": "Archivieren"
+  },
+  "stats": {
+    "usedTimes": "{{count}} mal verwendet",
+    "modified": "Geändert am {{date}}",
+    "created": "Erstellt am {{date}}"
+  }
+}

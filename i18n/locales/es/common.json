@@ -1,0 +1,53 @@
+{
+  "navigation": {
+    "dashboard": "Panel",
+    "templates": "Plantillas",
+    "logs": "Registros",
+    "apiKeys": "Claves API",
+    "documentation": "Documentación",
+    "settings": "Configuración",
+    "account": "Cuenta"
+  },
+  "actions": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "import": "Importar",
+    "copy": "Copiar",
+    "refresh": "Actualizar",
+    "logout": "Cerrar sesión",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse"
+  },
+  "status": {
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "draft": "Borrador",
+    "sent": "Enviado",
+    "delivered": "Entregado",
+    "opened": "Abierto",
+    "failed": "Fallido",
+    "loading": "Cargando...",
+    "success": "Éxito",
+    "error": "Error"
+  },
+  "time": {
+    "now": "ahora",
+    "minutesAgo": "hace {{count}} minutos",
+    "hoursAgo": "hace {{count}} horas",
+    "daysAgo": "hace {{count}} días",
+    "weeksAgo": "hace {{count}} semanas"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": "Por favor ingresa un email válido",
+    "minLength": "Debe tener al menos {{count}} caracteres",
+    "maxLength": "No debe tener más de {{count}} caracteres",
+    "passwordMatch": "Las contraseñas no coinciden"
+  }
+}

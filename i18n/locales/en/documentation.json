@@ -1,0 +1,59 @@
+{
+  "title": "API Documentation",
+  "subtitle": "Complete guide to integrate EmailPro into your application",
+  "navigation": {
+    "gettingStarted": "Getting Started",
+    "authentication": "Authentication",
+    "sendingEmails": "Sending Emails",
+    "templates": "Templates",
+    "webhooks": "Webhooks",
+    "sdks": "SDKs"
+  },
+  "gettingStarted": {
+    "title": "Getting Started",
+    "description": "Learn how to integrate EmailPro API into your application in minutes",
+    "baseUrl": "Base URL",
+    "quickExample": "Quick Example"
+  },
+  "authentication": {
+    "title": "Authentication",
+    "description": "Secure your API requests with API keys",
+    "apiKeyAuth": "API Key Authentication",
+    "securityTitle": "Security Best Practices",
+    "securityTips": [
+      "Never expose your API key in client-side code",
+      "Use environment variables to store your API key",
+      "Rotate your API keys regularly",
+      "Use different API keys for different environments"
+    ]
+  },
+  "sendingEmails": {
+    "title": "Sending Emails",
+    "description": "Send transactional and marketing emails with our powerful API",
+    "singleEmail": "Send a single email",
+    "requestBody": "Request Body",
+    "response": "Response",
+    "bulkSending": "Bulk Email Sending",
+    "bulkDescription": "Send multiple emails in a single request"
+  },
+  "templates": {
+    "title": "Email Templates",
+    "description": "Create reusable email templates with dynamic content",
+    "usingTemplates": "Using Templates",
+    "templateVariables": "Template Variables",
+    "variablesDescription": "Use double curly braces to insert variables into your templates:",
+    "listTemplates": "List all templates",
+    "createTemplate": "Create a new template"
+  },
+  "webhooks": {
+    "title": "Webhooks",
+    "description": "Receive real-time notifications about email events",
+    "events": "Webhook Events",
+    "payload": "Webhook Payload",
+    "handlerExample": "Webhook Handler Example"
+  },
+  "sdks": {
+    "title": "Official SDKs",
+    "description": "Use our official SDKs for faster integration"
+  }
+}

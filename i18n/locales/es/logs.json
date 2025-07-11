@@ -1,0 +1,36 @@
+{
+  "title": "Registros de Email",
+  "subtitle": "Rastrea y monitorea toda tu actividad de envío de emails",
+  "exportLogs": "Exportar Registros",
+  "searchPlaceholder": "Buscar registros...",
+  "filterByStatus": "Filtrar por estado",
+  "allStatus": "Todos los Estados",
+  "noLogs": "No se encontraron registros de email",
+  "table": {
+    "timestamp": "Fecha y Hora",
+    "template": "Plantilla",
+    "recipient": "Destinatario",
+    "subject": "Asunto",
+    "status": "Estado",
+    "content": "Contenido",
+    "actions": "Acciones"
+  },
+  "status": {
+    "sent": "Enviado",
+    "delivered": "Entregado",
+    "opened": "Abierto",
+    "clicked": "Clicado",
+    "bounced": "Rebotado",
+    "failed": "Fallido"
+  },
+  "export": {
+    "title": "Exportar Registros de Email",
+    "description": "Exporta tus registros de email en formato CSV o JSON",
+    "format": "Formato de Exportación",
+    "dateRange": "Rango de Fechas",
+    "last7Days": "Últimos 7 días",
+    "last30Days": "Últimos 30 días",
+    "last90Days": "Últimos 90 días",
+    "includeContent": "Incluir contenido del email"
+  }
+}

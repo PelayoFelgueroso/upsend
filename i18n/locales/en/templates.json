@@ -1,0 +1,58 @@
+{
+  "title": "Email Templates",
+  "subtitle": "Create and manage your email templates",
+  "newTemplate": "New Template",
+  "allTemplates": "All Templates",
+  "searchPlaceholder": "Search templates...",
+  "noTemplates": "No templates found",
+  "createFirst": "Create your first template to get started",
+  "form": {
+    "templateDetails": "Template Details",
+    "templateDetailsDesc": "Basic information about your email template",
+    "templateName": "Template Name",
+    "templateNamePlaceholder": "Enter template name",
+    "emailSubject": "Email Subject",
+    "emailSubjectPlaceholder": "Enter email subject",
+    "templateType": "Template Type",
+    "templateStatus": "Template Status",
+    "selectType": "Select template type",
+    "selectStatus": "Select template status",
+    "emailContent": "Email Content",
+    "emailContentDesc": "Write your email content using HTML or plain text",
+    "content": "Content",
+    "contentPlaceholder": "Enter your email content here...",
+    "preview": "Preview",
+    "previewDesc": "See how your email will look to recipients",
+    "subjectPreview": "Subject: {{subject}}",
+    "contentPreview": "Your email content will appear here...",
+    "saveTemplate": "Save Template",
+    "saveChanges": "Save Changes",
+    "sendTest": "Send Test Email",
+    "testEmailSent": "Test email sent successfully",
+    "templateSaved": "Template saved successfully",
+    "templateUpdated": "Template updated successfully",
+    "templateDeleted": "Template deleted successfully"
+  },
+  "types": {
+    "transactional": "Transactional",
+    "marketing": "Marketing",
+    "notification": "Notification"
+  },
+  "status": {
+    "active": "Active",
+    "draft": "Draft",
+    "archived": "Archived"
+  },
+  "actions": {
+    "edit": "Edit",
+    "duplicate": "Duplicate",
+    "delete": "Delete",
+    "activate": "Activate",
+    "archive": "Archive"
+  },
+  "stats": {
+    "usedTimes": "Used {{count}} times",
+    "modified": "Modified {{date}}",
+    "created": "Created {{date}}"
+  }
+}

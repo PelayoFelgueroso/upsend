@@ -1,0 +1,49 @@
+{
+  "title": "API Keys",
+  "subtitle": "Manage your API keys for email sending",
+  "createKey": "Create API Key",
+  "noKeys": "No API keys found",
+  "createFirst": "Create your first API key to get started",
+  "table": {
+    "name": "Name",
+    "key": "Key",
+    "created": "Created",
+    "lastUsed": "Last Used",
+    "status": "Status",
+    "actions": "Actions"
+  },
+  "form": {
+    "title": "Create New API Key",
+    "description": "Create a new API key for your application",
+    "name": "Name",
+    "namePlaceholder": "Enter API key name",
+    "nameDescription": "Choose a descriptive name to identify this key",
+    "permissions": "Permissions",
+    "permissionsDescription": "Select what this API key can do",
+    "sendEmails": "Send Emails",
+    "readTemplates": "Read Templates",
+    "manageTemplates": "Manage Templates",
+    "readLogs": "Read Logs",
+    "expiresAt": "Expires At",
+    "neverExpires": "Never expires",
+    "customExpiry": "Custom expiry date",
+    "keyCreated": "API key created successfully",
+    "copyKey": "Make sure to copy your API key now. You won't be able to see it again!",
+    "keyRevoked": "API key revoked successfully"
+  },
+  "actions": {
+    "copy": "Copy",
+    "revoke": "Revoke",
+    "regenerate": "Regenerate",
+    "viewUsage": "View Usage"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "expired": "Expired"
+  },
+  "security": {
+    "title": "Security Information",
+    "description": "Keep your API keys secure and follow these best practices:"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Configuración",
+  "subtitle": "Configura tus preferencias de envío de email",
+  "tabs": {
+    "smtp": "Configuración SMTP",
+    "sender": "Configuración del Remitente",
+    "tracking": "Seguimiento y Analíticas",
+    "limits": "Límites y Cuotas"
+  },
+  "smtp": {
+    "title": "Configuración del Servidor SMTP",
+    "description": "Configura los ajustes de tu servidor SMTP para enviar emails",
+    "host": "Host SMTP",
+    "port": "Puerto SMTP",
+    "username": "Usuario",
+    "password": "Contraseña",
+    "testConnection": "Probar Conexión"
+  },
+  "sender": {
+    "title": "Información del Remitente",
+    "description": "Configura la información predeterminada del remitente para tus emails",
+    "fromName": "Nombre del Remitente",
+    "fromEmail": "Email del Remitente",
+    "replyTo": "Email de Respuesta"
+  },
+  "tracking": {
+    "title": "Seguimiento y Analíticas",
+    "description": "Configura los ajustes de seguimiento y analíticas de email",
+    "enableTracking": "Seguimiento de Email",
+    "trackingDescription": "Rastrea aperturas y clics de email",
+    "enableBounceHandling": "Manejo de Rebotes",
+    "bounceDescription": "Maneja automáticamente los emails rebotados",
+    "webhookUrl": "URL del Webhook",
+    "webhookDescription": "Recibe notificaciones en tiempo real sobre eventos de email"
+  },
+  "limits": {
+    "title": "Límites y Cuotas",
+    "description": "Configura límites y cuotas de envío",
+    "dailyLimit": "Límite Diario de Envío",
+    "dailyLimitDescription": "Número máximo de emails que se pueden enviar por día",
+    "timezone": "Zona Horaria"
+  }
+}

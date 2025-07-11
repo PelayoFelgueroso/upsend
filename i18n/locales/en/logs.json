@@ -1,0 +1,48 @@
+{
+  "title": "Email Logs",
+  "subtitle": "Track and monitor all your email sending activity",
+  "exportLogs": "Export Logs",
+  "searchPlaceholder": "Search logs...",
+  "filterByStatus": "Filter by status",
+  "allStatus": "All Status",
+  "noLogs": "No email logs found",
+  "table": {
+    "timestamp": "Timestamp",
+    "template": "Template",
+    "recipient": "Recipient",
+    "subject": "Subject",
+    "status": "Status",
+    "content": "Content",
+    "actions": "Actions"
+  },
+  "status": {
+    "sent": "Sent",
+    "delivered": "Delivered",
+    "opened": "Opened",
+    "clicked": "Clicked",
+    "bounced": "Bounced",
+    "failed": "Failed"
+  },
+  "details": {
+    "title": "Email Log Details",
+    "basicInfo": "Basic Information",
+    "deliveryInfo": "Delivery Information",
+    "errorInfo": "Error Information",
+    "sentAt": "Sent At",
+    "deliveredAt": "Delivered At",
+    "openedAt": "Opened At",
+    "clickedAt": "Clicked At",
+    "errorMessage": "Error Message",
+    "retryCount": "Retry Count"
+  },
+  "export": {
+    "title": "Export Email Logs",
+    "description": "Export your email logs in CSV or JSON format",
+    "format": "Export Format",
+    "dateRange": "Date Range",
+    "last7Days": "Last 7 days",
+    "last30Days": "Last 30 days",
+    "last90Days": "Last 90 days",
+    "includeContent": "Include email content"
+  }
+}

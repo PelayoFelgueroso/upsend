@@ -1,0 +1,59 @@
+{
+  "title": "Documentación de la API",
+  "subtitle": "Guía completa para integrar EmailPro en tu aplicación",
+  "navigation": {
+    "gettingStarted": "Comenzando",
+    "authentication": "Autenticación",
+    "sendingEmails": "Enviando Emails",
+    "templates": "Plantillas",
+    "webhooks": "Webhooks",
+    "sdks": "SDKs"
+  },
+  "gettingStarted": {
+    "title": "Comenzando",
+    "description": "Aprende cómo integrar la API de EmailPro en tu aplicación en minutos",
+    "baseUrl": "URL Base",
+    "quickExample": "Ejemplo Rápido"
+  },
+  "authentication": {
+    "title": "Autenticación",
+    "description": "Asegura tus peticiones API con claves API",
+    "apiKeyAuth": "Autenticación con Clave API",
+    "securityTitle": "Mejores Prácticas de Seguridad",
+    "securityTips": [
+      "Nunca expongas tu clave API en código del lado del cliente",
+      "Usa variables de entorno para almacenar tu clave API",
+      "Rota tus claves API regularmente",
+      "Usa diferentes claves API para diferentes entornos"
+    ]
+  },
+  "sendingEmails": {
+    "title": "Enviando Emails",
+    "description": "Envía emails transaccionales y de marketing con nuestra potente API",
+    "singleEmail": "Enviar un solo email",
+    "requestBody": "Cuerpo de la Petición",
+    "response": "Respuesta",
+    "bulkSending": "Envío Masivo de Emails",
+    "bulkDescription": "Envía múltiples emails en una sola petición"
+  },
+  "templates": {
+    "title": "Plantillas de Email",
+    "description": "Crea plantillas de email reutilizables con contenido dinámico",
+    "usingTemplates": "Usando Plantillas",
+    "templateVariables": "Variables de Plantilla",
+    "variablesDescription": "Usa llaves dobles para insertar variables en tus plantillas:",
+    "listTemplates": "Listar todas las plantillas",
+    "createTemplate": "Crear una nueva plantilla"
+  },
+  "webhooks": {
+    "title": "Webhooks",
+    "description": "Recibe notificaciones en tiempo real sobre eventos de email",
+    "events": "Eventos de Webhook",
+    "payload": "Payload del Webhook",
+    "handlerExample": "Ejemplo de Manejador de Webhook"
+  },
+  "sdks": {
+    "title": "SDKs Oficiales",
+    "description": "Usa nuestros SDKs oficiales para una integración más rápida"
+  }
+}

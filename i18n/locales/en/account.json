@@ -1,0 +1,40 @@
+{
+  "title": "Account Settings",
+  "subtitle": "Manage your account information and preferences",
+  "profile": {
+    "title": "Profile Information",
+    "description": "Update your personal information",
+    "name": "Full Name",
+    "email": "Email Address",
+    "avatar": "Profile Picture",
+    "changeAvatar": "Change Avatar",
+    "removeAvatar": "Remove Avatar"
+  },
+  "security": {
+    "title": "Security",
+    "description": "Manage your account security settings",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm New Password",
+    "changePassword": "Change Password",
+    "passwordChanged": "Password changed successfully"
+  },
+  "preferences": {
+    "title": "Preferences",
+    "description": "Customize your experience",
+    "language": "Language",
+    "timezone": "Timezone",
+    "notifications": "Email Notifications",
+    "marketing": "Marketing Emails",
+    "updates": "Product Updates"
+  },
+  "subscription": {
+    "title": "Subscription",
+    "description": "Manage your subscription and billing",
+    "currentPlan": "Current Plan",
+    "usage": "Usage",
+    "billing": "Billing",
+    "upgrade": "Upgrade Plan",
+    "cancel": "Cancel Subscription"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Settings",
+  "subtitle": "Configure your email sending preferences",
+  "tabs": {
+    "smtp": "SMTP Configuration",
+    "sender": "Sender Settings",
+    "tracking": "Tracking & Analytics",
+    "limits": "Limits & Quotas"
+  },
+  "smtp": {
+    "title": "SMTP Server Configuration",
+    "description": "Configure your SMTP server settings for sending emails",
+    "host": "SMTP Host",
+    "port": "SMTP Port",
+    "username": "Username",
+    "password": "Password",
+    "testConnection": "Test Connection"
+  },
+  "sender": {
+    "title": "Sender Information",
+    "description": "Configure default sender information for your emails",
+    "fromName": "From Name",
+    "fromEmail": "From Email",
+    "replyTo": "Reply-To Email"
+  },
+  "tracking": {
+    "title": "Tracking & Analytics",
+    "description": "Configure email tracking and analytics settings",
+    "enableTracking": "Email Tracking",
+    "trackingDescription": "Track email opens and clicks",
+    "enableBounceHandling": "Bounce Handling",
+    "bounceDescription": "Automatically handle bounced emails",
+    "webhookUrl": "Webhook URL",
+    "webhookDescription": "Receive real-time notifications about email events"
+  },
+  "limits": {
+    "title": "Limits & Quotas",
+    "description": "Configure sending limits and quotas",
+    "dailyLimit": "Daily Sending Limit",
+    "dailyLimitDescription": "Maximum number of emails that can be sent per day",
+    "timezone": "Timezone"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "title": "Modèles d'Email",
+  "subtitle": "Créez et gérez vos modèles d'email",
+  "newTemplate": "Nouveau Modèle",
+  "allTemplates": "Tous les Modèles",
+  "searchPlaceholder": "Rechercher des modèles...",
+  "noTemplates": "Aucun modèle trouvé",
+  "createFirst": "Créez votre premier modèle pour commencer",
+  "form": {
+    "templateDetails": "Détails du Modèle",
+    "templateDetailsDesc": "Informations de base sur votre modèle d'email",
+    "templateName": "Nom du Modèle",
+    "templateNamePlaceholder": "Saisissez le nom du modèle",
+    "emailSubject": "Objet de l'Email",
+    "emailSubjectPlaceholder": "Saisissez l'objet de l'email",
+    "templateType": "Type de Modèle",
+    "templateStatus": "Statut du Modèle",
+    "selectType": "Sélectionnez le type de modèle",
+    "selectStatus": "Sélectionnez le statut du modèle",
+    "emailContent": "Contenu de l'Email",
+    "emailContentDesc": "Rédigez le contenu de votre email en HTML ou texte brut",
+    "content": "Contenu",
+    "contentPlaceholder": "Saisissez le contenu de votre email ici...",
+    "preview": "Aperçu",
+    "previewDesc": "Voyez comment votre email apparaîtra aux destinataires",
+    "subjectPreview": "Objet: {{subject}}",
+    "contentPreview": "Le contenu de votre email apparaîtra ici...",
+    "saveTemplate": "Enregistrer le Modèle",
+    "saveChanges": "Enregistrer les Modifications",
+    "sendTest": "Envoyer un Email de Test",
+    "testEmailSent": "Email de test envoyé avec succès",
+    "templateSaved": "Modèle enregistré avec succès",
+    "templateUpdated": "Modèle mis à jour avec succès",
+    "templateDeleted": "Modèle supprimé avec succès"
+  },
+  "types": {
+    "transactional": "Transactionnel",
+    "marketing": "Marketing",
+    "notification": "Notification"
+  },
+  "status": {
+    "active": "Actif",
+    "draft": "Brouillon",
+    "archived": "Archivé"
+  },
+  "actions": {
+    "edit": "Modifier",
+    "duplicate": "Dupliquer",
+    "delete": "Supprimer",
+    "activate": "Activer",
+    "archive": "Archiver"
+  },
+  "stats": {
+    "usedTimes": "Utilisé {{count}} fois",
+    "modified": "Modifié le {{date}}",
+    "created": "Créé le {{date}}"
+  }
+}

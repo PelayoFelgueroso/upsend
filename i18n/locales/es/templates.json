@@ -1,0 +1,58 @@
+{
+  "title": "Plantillas de Email",
+  "subtitle": "Crea y gestiona tus plantillas de email",
+  "newTemplate": "Nueva Plantilla",
+  "allTemplates": "Todas las Plantillas",
+  "searchPlaceholder": "Buscar plantillas...",
+  "noTemplates": "No se encontraron plantillas",
+  "createFirst": "Crea tu primera plantilla para comenzar",
+  "form": {
+    "templateDetails": "Detalles de la Plantilla",
+    "templateDetailsDesc": "Información básica sobre tu plantilla de email",
+    "templateName": "Nombre de la Plantilla",
+    "templateNamePlaceholder": "Ingresa el nombre de la plantilla",
+    "emailSubject": "Asunto del Email",
+    "emailSubjectPlaceholder": "Ingresa el asunto del email",
+    "templateType": "Tipo de Plantilla",
+    "selectType": "Selecciona el tipo de plantilla",
+    "templateStatus": "Estatus de la Plantilla",
+    "selectStatus": "Selecciona el estatus de la plantilla",
+    "emailContent": "Contenido del Email",
+    "emailContentDesc": "Escribe el contenido de tu email usando HTML o texto plano",
+    "content": "Contenido",
+    "contentPlaceholder": "Ingresa el contenido de tu email aquí...",
+    "preview": "Vista Previa",
+    "previewDesc": "Ve cómo se verá tu email para los destinatarios",
+    "subjectPreview": "Asunto: {{subject}}",
+    "contentPreview": "El contenido de tu email aparecerá aquí...",
+    "saveTemplate": "Guardar Plantilla",
+    "saveChanges": "Guardar Cambios",
+    "sendTest": "Enviar Email de Prueba",
+    "testEmailSent": "Email de prueba enviado exitosamente",
+    "templateSaved": "Plantilla guardada exitosamente",
+    "templateUpdated": "Plantilla actualizada exitosamente",
+    "templateDeleted": "Plantilla eliminada exitosamente"
+  },
+  "types": {
+    "transactional": "Transaccional",
+    "marketing": "Marketing",
+    "notification": "Notificación"
+  },
+  "status": {
+    "active": "Activa",
+    "draft": "Borrador",
+    "archived": "Archivada"
+  },
+  "actions": {
+    "edit": "Editar",
+    "duplicate": "Duplicar",
+    "delete": "Eliminar",
+    "activate": "Activar",
+    "archive": "Archivar"
+  },
+  "stats": {
+    "usedTimes": "Usada {{count}} veces",
+    "modified": "Modificada {{date}}",
+    "created": "Creada {{date}}"
+  }
+}

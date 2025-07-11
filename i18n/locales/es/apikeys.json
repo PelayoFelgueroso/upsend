@@ -1,0 +1,31 @@
+{
+  "title": "Claves API",
+  "subtitle": "Gestiona tus claves API para el envío de emails",
+  "createKey": "Crear Clave API",
+  "noKeys": "No se encontraron claves API",
+  "createFirst": "Crea tu primera clave API para comenzar",
+  "security": {
+    "title": "Información de Seguridad",
+    "description": "Mantén tus claves API seguras y sigue estas mejores prácticas:"
+  },
+  "form": {
+    "title": "Crear Nueva Clave API",
+    "description": "Crea una nueva clave API para tu aplicación",
+    "name": "Nombre",
+    "namePlaceholder": "Ingresa el nombre de la clave API",
+    "nameDescription": "Elige un nombre descriptivo para identificar esta clave",
+    "copyKey": "¡Asegúrate de copiar tu clave API ahora. No podrás verla de nuevo!"
+  },
+  "table": {
+    "name": "Nombre",
+    "key": "Clave",
+    "created": "Creada",
+    "lastUsed": "Último Uso",
+    "status": "Estado",
+    "actions": "Acciones"
+  },
+  "status": {
+    "active": "Activa",
+    "inactive": "Inactiva"
+  }
+}

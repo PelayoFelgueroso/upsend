@@ -1,0 +1,21 @@
+{
+  "title": "Panel de Control",
+  "subtitle": "¡Bienvenido de vuelta! Esto es lo que está pasando con tus emails.",
+  "stats": {
+    "totalEmails": "Total de Emails",
+    "emailsSent": "Emails Enviados",
+    "activeTemplates": "Plantillas Activas",
+    "successRate": "Tasa de Éxito"
+  },
+  "charts": {
+    "emailAnalytics": "Analíticas de Email",
+    "recentActivity": "Actividad Reciente",
+    "latestActivity": "Última actividad de envío de emails"
+  },
+  "activity": {
+    "template": "Plantilla",
+    "recipient": "Destinatario",
+    "status": "Estado",
+    "time": "Hora"
+  }
+}

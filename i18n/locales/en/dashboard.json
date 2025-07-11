@@ -1,0 +1,21 @@
+{
+  "title": "Dashboard",
+  "subtitle": "Welcome back! Here's what's happening with your emails.",
+  "stats": {
+    "totalEmails": "Total Emails",
+    "emailsSent": "Emails Sent",
+    "activeTemplates": "Active Templates",
+    "successRate": "Success Rate"
+  },
+  "charts": {
+    "emailAnalytics": "Email Analytics",
+    "recentActivity": "Recent Activity",
+    "latestActivity": "Latest email sending activity"
+  },
+  "activity": {
+    "template": "Template",
+    "recipient": "Recipient",
+    "status": "Status",
+    "time": "Time"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Configuración de Cuenta",
+  "subtitle": "Gestiona la información de tu cuenta y preferencias",
+  "profile": {
+    "title": "Información del Perfil",
+    "description": "Actualiza tu información personal",
+    "name": "Nombre Completo",
+    "email": "Dirección de Email",
+    "avatar": "Foto de Perfil",
+    "changeAvatar": "Cambiar Avatar",
+    "removeAvatar": "Eliminar Avatar"
+  },
+  "security": {
+    "title": "Seguridad",
+    "description": "Gestiona la configuración de seguridad de tu cuenta",
+    "currentPassword": "Contraseña Actual",
+    "newPassword": "Nueva Contraseña",
+    "confirmPassword": "Confirmar Nueva Contraseña",
+    "changePassword": "Cambiar Contraseña",
+    "passwordChanged": "Contraseña cambiada exitosamente"
+  },
+  "preferences": {
+    "title": "Preferencias",
+    "description": "Personaliza tu experiencia",
+    "language": "Idioma",
+    "timezone": "Zona Horaria",
+    "notifications": "Notificaciones por Email",
+    "marketing": "Emails de Marketing",
+    "updates": "Actualizaciones del Producto"
+  },
+  "subscription": {
+    "title": "Suscripción",
+    "description": "Gestiona tu suscripción y facturación",
+    "currentPlan": "Plan Actual",
+    "usage": "Uso",
+    "billing": "Facturación",
+    "upgrade": "Actualizar Plan",
+    "cancel": "Cancelar Suscripción"
+  }
+}
