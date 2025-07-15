@@ -30,6 +30,7 @@ export function useCreateApiKey() {
       queryClient.invalidateQueries({ queryKey: ["apiKeys"] })
       toast.success("API key created successfully")
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onError: (error: any) => {
       const message = error.response?.data?.message || "Failed to create API key"
       toast.error(message)
@@ -48,6 +49,7 @@ export function useRevokeApiKey() {
       queryClient.invalidateQueries({ queryKey: ["apiKeys"] })
       toast.success("API key revoked successfully")
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onError: (error: any) => {
       const message = error.response?.data?.message || "Failed to revoke API key"
       toast.error(message)

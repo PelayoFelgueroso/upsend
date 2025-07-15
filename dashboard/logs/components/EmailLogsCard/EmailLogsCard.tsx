@@ -8,6 +8,7 @@ import { LogsCardHeader } from "./components/LogsCardHeader";
 import { LogsFilters } from "./components/LogsFilters";
 import { PaginationType } from "@/dashboard/models";
 import { Pagination } from "@/dashboard/components/Pagination";
+import { LogsTable } from "./components/LogsTable";
 
 interface Props {
   logs: EmailLogResponse[];
@@ -43,6 +44,8 @@ export const EmailLogsCard = ({
           statusFilter={statusFilter}
           setStatusFilter={setStatusFilter}
         />
+
+        <LogsTable logs={logs} />
 
         {logs.length === 0 ? (
           <div className="text-center py-8">

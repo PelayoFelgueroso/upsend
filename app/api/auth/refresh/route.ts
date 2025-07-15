@@ -38,6 +38,7 @@ export async function POST() {
     }
 
     // Verify refresh token
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let decoded: any;
     try {
       decoded = jwt.verify(refreshToken, JWT_REFRESH_SECRET);
@@ -164,6 +165,7 @@ export async function POST() {
     });
 
     // Return user data and access token
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: _, ...userWithoutPassword } = user;
 
     return NextResponse.json({

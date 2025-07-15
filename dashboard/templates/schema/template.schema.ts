@@ -8,7 +8,7 @@ export const templateSchema = z.object({
     .max(200, "Subject too long"),
   content: z.string().min(10, "Content is required"),
   type: z.enum(["TRANSACTIONAL", "MARKETING", "NOTIFICATION"]),
-  status: z.enum(["ACTIVE", "DRAFT", "ARCHIVED"]).optional(),
+  status: z.enum(["ACTIVE", "DRAFT", "ARCHIVED"]),
 });
 
 export type TemplateSchemaType = z.infer<typeof templateSchema>;

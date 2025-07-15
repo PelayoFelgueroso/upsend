@@ -86,7 +86,13 @@ function TemplatesContent() {
       <TemplatesGrid templates={data?.templates} handleDelete={handleDelete} />
 
       {/* Pagination */}
-      <Pagination pagination={data?.pagination} page={page} setPage={setPage} />
+      {data?.pagination && (
+        <Pagination
+          pagination={data?.pagination}
+          page={page}
+          setPage={setPage}
+        />
+      )}
 
       {/* Delete Confirmation Dialog */}
       <DeleteDialog

@@ -34,6 +34,7 @@ export const POST = withAuth(async (req) => {
     const userId = req.user!.id;
 
     // Build where clause
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const where: any = {
       template: {
         userId,
@@ -96,17 +97,15 @@ export const POST = withAuth(async (req) => {
         ...logs.map((log) =>
           formatCsvRow([
             log.id,
-            log.template.name,
+            log.template?.name || "",
             log.recipient,
             log.subject,
             log.status,
-            log.messageId || "",
+            log.content || "",
             log.sentAt.toISOString(),
-            log.deliveredAt?.toISOString() || "",
-            log.openedAt?.toISOString() || "",
-            log.clickedAt?.toISOString() || "",
-            log.errorMessage || "",
-            ...(data.includeContent ? [log.template.content || ""] : []),
+
+            log.error || "",
+            ...(data.includeContent ? [log.template?.content || ""] : []),
           ])
         ),
       ];
@@ -132,17 +131,14 @@ export const POST = withAuth(async (req) => {
         },
         logs: logs.map((log) => ({
           id: log.id,
-          templateName: log.template.name,
+          templateName: log.template?.name,
           recipient: log.recipient,
           subject: log.subject,
           status: log.status,
-          messageId: log.messageId,
+          content: log.content,
           sentAt: log.sentAt.toISOString(),
-          deliveredAt: log.deliveredAt?.toISOString() || null,
-          openedAt: log.openedAt?.toISOString() || null,
-          clickedAt: log.clickedAt?.toISOString() || null,
-          errorMessage: log.errorMessage,
-          ...(data.includeContent && { content: log.template.content }),
+          error: log.error,
+          ...(data.includeContent && { content: log.template?.content }),
         })),
       };
 

@@ -1,6 +1,10 @@
 import api from "@/lib/axios";
 import { ChangePasswordRequest, UpdateUserRequest } from "@/auth/models/User";
-import { User } from "@prisma/client";
+import { User, UserUsage } from "@prisma/client";
+
+type UserWithUsage = User & {
+  usage: UserUsage | null;
+};
 
 export class UserService {
   private static readonly ENDPOINTS = {
@@ -12,9 +16,9 @@ export class UserService {
   /**
    * Get current user information
    */
-  static async getCurrentUser(): Promise<User> {
+  static async getCurrentUser(): Promise<UserWithUsage> {
     try {
-      const response = await api.get<{ user: User }>(
+      const response = await api.get<{ user: UserWithUsage }>(
         UserService.ENDPOINTS.USER
       );
       return response.data.user;
@@ -52,6 +56,7 @@ export class UserService {
   /**
    * Handle API errors consistently
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private static handleError(error: any, defaultMessage: string): Error {
     if (error.response?.data?.message) {
       return new Error(error.response.data.message);

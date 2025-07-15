@@ -10,7 +10,7 @@ import {
 import { PageError } from "@/dashboard/components/PageError";
 import { DeleteDialog } from "@/dashboard/components/DeleteDialog";
 import { EditTemplateHeader } from "@/dashboard/templates/components/EditTemplatePage/EditTemplateHeader";
-import { EditTemplateForm } from "@/dashboard/templates/components/EditTemplateForm/EditTemplateForm";
+import { TemplateForm } from "@/dashboard/templates/components/TemplateForm/TemplateForm";
 
 export default function EditTemplatePage({
   params,
@@ -62,7 +62,7 @@ export default function EditTemplatePage({
         disabled={deleteTemplateMutation.isPending}
       />
 
-      <EditTemplateForm id={id} template={template} />
+      <TemplateForm id={id} template={template} />
 
       {/* Delete Confirmation Dialog */}
       <DeleteDialog

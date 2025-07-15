@@ -3,10 +3,10 @@ import { db } from "@/lib/db";
 import { withAuth } from "@/auth/middlewares/authmiddleware";
 
 export const POST = withAuth(
-  async (req, { params }: { params: { id: string } }) => {
+  async (req, { params }: { params: Promise<{ id: string }> }) => {
     try {
       const userId = req.user!.id;
-      const templateId = params.id;
+      const { id: templateId } = await params;
 
       // Find original template
       const originalTemplate = await db.emailTemplate.findFirst({

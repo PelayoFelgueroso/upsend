@@ -24,6 +24,7 @@ export const GET = withAuth(async (req) => {
     const offset = (query.page - 1) * query.limit;
 
     // Build where clause
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const where: any = {
       template: {
         userId,
@@ -83,7 +84,7 @@ export const GET = withAuth(async (req) => {
       status: log.status.toLowerCase(),
       content: log.content,
       sentAt: log.sentAt.toISOString(),
-      errorMessage: log.errorMessage,
+      error: log.error,
     }));
 
     const pagination = {

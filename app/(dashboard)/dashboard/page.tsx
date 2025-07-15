@@ -53,18 +53,26 @@ function DashboardContent() {
     {
       title: t("stats.totalEmails"),
       value: stats?.totalEmails.value.toLocaleString() || "0",
-      description: `${stats?.totalEmails.growth >= 0 ? "+" : ""}${
+      description: `${
         stats?.totalEmails.growth
-      }% from last month`,
+          ? stats?.totalEmails.growth >= 0
+            ? "+"
+            : ""
+          : ""
+      }${stats?.totalEmails.growth}% from last month`,
       icon: Mail,
       trend: stats?.totalEmails.trend || "neutral",
     },
     {
       title: t("stats.emailsSent"),
       value: stats?.emailsSent.value.toLocaleString() || "0",
-      description: `${stats?.emailsSent.growth >= 0 ? "+" : ""}${
+      description: `${
         stats?.emailsSent.growth
-      }% from last month`,
+          ? stats?.emailsSent.growth >= 0
+            ? "+"
+            : ""
+          : ""
+      }${stats?.emailsSent.growth}% from last month`,
       icon: Send,
       trend: stats?.emailsSent.trend || "neutral",
     },

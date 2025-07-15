@@ -8,8 +8,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { useSaveSenderSettings } from "@/dashboard/settings/hooks/useSMTP";
 import {
   SenderSettingsForm,
@@ -28,7 +35,7 @@ interface Props {
 export const SenderSettings = ({ smtpConfig }: Props) => {
   const saveSenderSettingsMutationn = useSaveSenderSettings();
 
-  const smtpForm = useForm<SenderSettingsForm>({
+  const form = useForm<SenderSettingsForm>({
     resolver: zodResolver(senderSettingsSchema),
     defaultValues: {
       fromEmail: "",
@@ -37,15 +44,17 @@ export const SenderSettings = ({ smtpConfig }: Props) => {
     },
   });
 
+  const { handleSubmit, reset, control } = form;
+
   useEffect(() => {
     if (smtpConfig) {
-      smtpForm.reset({
+      reset({
         fromEmail: smtpConfig.fromEmail,
         fromName: smtpConfig.fromName,
         replyToEmail: smtpConfig.replyToEmail || undefined,
       });
     }
-  }, [smtpConfig, smtpForm]);
+  }, [smtpConfig, reset]);
 
   const onSaveSmtp = async (data: SenderSettingsForm) => {
     await saveSenderSettingsMutationn.mutateAsync(data);
@@ -63,61 +72,79 @@ export const SenderSettings = ({ smtpConfig }: Props) => {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="grid gap-4">
-          <div className="space-y-2">
-            <Label htmlFor="fromName">From Name</Label>
-            <Input
-              id="fromName"
-              placeholder="Your Company Name"
-              {...smtpForm.register("fromName")}
-            />
-            {smtpForm.formState.errors.fromName && (
-              <p className="text-sm text-destructive">
-                {smtpForm.formState.errors.fromName.message}
-              </p>
-            )}
-          </div>
+        <Form {...form}>
+          <form onSubmit={handleSubmit(onSaveSmtp)} className="grid gap-4">
+            <FormField
+              control={control}
+              name="fromName"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel>From Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Your Company Name"
+                      {...field}
+                      required
+                    />
+                  </FormControl>
 
-          <div className="space-y-2">
-            <Label htmlFor="fromEmail">From Email</Label>
-            <Input
-              id="fromEmail"
-              placeholder="noreply@yourcompany.com"
-              {...smtpForm.register("fromEmail")}
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-            {smtpForm.formState.errors.fromEmail && (
-              <p className="text-sm text-destructive">
-                {smtpForm.formState.errors.fromEmail.message}
-              </p>
-            )}
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="replyToEmail">Reply-To Email (Optional)</Label>
-            <Input
-              id="replyToEmail"
-              placeholder="support@yourcompany.com"
-              {...smtpForm.register("replyToEmail")}
+            <FormField
+              control={control}
+              name="fromEmail"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel>From Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="noreply@yourcompany.com"
+                      {...field}
+                      required
+                      type="email"
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-            {smtpForm.formState.errors.replyToEmail && (
-              <p className="text-sm text-destructive">
-                {smtpForm.formState.errors.replyToEmail.message}
-              </p>
-            )}
-          </div>
 
-          <Button
-            onClick={smtpForm.handleSubmit(onSaveSmtp)}
-            disabled={saveSenderSettingsMutationn.isPending}
-          >
-            {saveSenderSettingsMutationn.isPending ? (
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            ) : (
-              <Settings className="mr-2 h-4 w-4" />
-            )}
-            Save Sender Settings
-          </Button>
-        </div>
+            <FormField
+              control={control}
+              name="replyToEmail"
+              render={({ field }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel>Reply-To Email (Optional)</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="support@yourcompany.com"
+                      {...field}
+                      required
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <Button
+              onClick={form.handleSubmit(onSaveSmtp)}
+              disabled={saveSenderSettingsMutationn.isPending}
+            >
+              {saveSenderSettingsMutationn.isPending ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <Settings className="mr-2 h-4 w-4" />
+              )}
+              Save Sender Settings
+            </Button>
+          </form>
+        </Form>
       </CardContent>
     </Card>
   );

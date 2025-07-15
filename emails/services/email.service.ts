@@ -5,6 +5,7 @@ import {
   SmtpConfigTest,
   TestConnectionResult,
 } from "../models/email";
+import { renderTemplate } from "@/lib/handlebars";
 
 export class EmailService {
   static async getSmtpConfig(userId: string) {
@@ -190,7 +191,7 @@ export class EmailService {
     userId: string,
     templateId: string,
     recipient: string,
-    variables: Record<string, string> = {}
+    variables: Record<string, string | number> = {}
   ) {
     const template = await prisma.emailTemplate.findFirst({
       where: {
@@ -204,15 +205,8 @@ export class EmailService {
       throw new Error("Template not found or not active");
     }
 
-    // Replace variables in subject and content
-    let subject = template.subject;
-    let content = template.content;
-
-    Object.entries(variables).forEach(([key, value]) => {
-      const placeholder = `{{${key}}}`;
-      subject = subject.replace(new RegExp(placeholder, "g"), value);
-      content = content.replace(new RegExp(placeholder, "g"), value);
-    });
+    const subject = renderTemplate(template.subject, variables);
+    const content = renderTemplate(template.content, variables);
 
     return await this.sendEmail(userId, {
       recipient,

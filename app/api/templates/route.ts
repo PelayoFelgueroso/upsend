@@ -30,6 +30,7 @@ export const GET = withAuth(async (req) => {
     const offset = (query.page - 1) * query.limit;
 
     // Build where clause
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const where: any = { userId };
 
     if (query.search) {
@@ -129,6 +130,7 @@ export const POST = withAuth(async (req) => {
       data: {
         ...data,
         userId,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         type: data.type as any,
       },
       include: {
