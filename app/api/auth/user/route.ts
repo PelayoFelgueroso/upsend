@@ -34,7 +34,16 @@ export const GET = withAuth(async (req: AuthenticatedRequest) => {
           }
         : null,
     };
-    return NextResponse.json({ user: safeUser });
+
+    return NextResponse.json({
+      user: {
+        ...safeUser,
+        usage: {
+          ...safeUser.usage,
+          storageUsed: safeUser.usage?.storageUsed.toString(),
+        },
+      },
+    });
   } catch (error) {
     console.error("Get user error:", error);
     return NextResponse.json(

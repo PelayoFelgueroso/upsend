@@ -67,7 +67,13 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       message: "User created successfully",
-      user: userWithoutPassword,
+      user: {
+        ...userWithoutPassword,
+        usage: {
+          ...userWithoutPassword.usage,
+          storageUsed: userWithoutPassword.usage?.storageUsed.toString(),
+        },
+      },
     });
   } catch (error) {
     console.error("Signup error:", error);
