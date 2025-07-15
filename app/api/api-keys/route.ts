@@ -3,6 +3,7 @@ import { z } from "zod";
 import { db } from "@/lib/db";
 import crypto from "crypto";
 import { withAuth } from "@/auth/middlewares/authmiddleware";
+import { ApiKey } from "@prisma/client";
 
 const createApiKeySchema = z.object({
   name: z.string().min(1, "Name is required").max(255, "Name too long"),
@@ -29,7 +30,7 @@ export const GET = withAuth(async (req) => {
       orderBy: { createdAt: "desc" },
     });
 
-    const formattedKeys = apiKeys.map((key) => ({
+    const formattedKeys = apiKeys.map((key: ApiKey) => ({
       id: key.id,
       name: key.name,
       key: maskApiKey(key.key), // Always mask in list view
