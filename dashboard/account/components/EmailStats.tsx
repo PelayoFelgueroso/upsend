@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   usage: any;
   isLoading: boolean;
 }
@@ -31,8 +32,7 @@ export const EmailStats = ({ usage, isLoading }: Props) => {
               <div className="text-sm text-muted-foreground">This month</div>
               <div className="mt-2 text-xs text-muted-foreground">
                 Limit:{" "}
-                {usage?.limits.emailsPerMonth?.toLocaleString() ||
-                  "Unlimited"}
+                {usage?.limits.emailsPerMonth?.toLocaleString() || "Unlimited"}
                 /month
               </div>
             </>
@@ -89,9 +89,7 @@ export const EmailStats = ({ usage, isLoading }: Props) => {
             <>
               <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
                 {usage?.storageUsed
-                  ? `${(usage.storageUsed / 1024 / 1024 / 1024).toFixed(
-                      1
-                    )} GB`
+                  ? `${(usage.storageUsed / 1024 / 1024 / 1024).toFixed(1)} GB`
                   : "0 GB"}
               </div>
               <div className="text-sm text-muted-foreground">
