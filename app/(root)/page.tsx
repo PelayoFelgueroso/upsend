@@ -466,7 +466,7 @@ export default function LandingPage() {
                             </span>{" "}
                             <span className="text-blue-500">from</span>{" "}
                             <span className="text-green-500">
-                              'email-app-pelayo'
+                              &apos;upsend-js&apos;
                             </span>
                             ;{"\n\n"}
                             <span className="text-blue-500">const</span>{" "}
@@ -475,16 +475,16 @@ export default function LandingPage() {
                             <span className="text-yellow-500">EasyMailJS</span>(
                             {"\n  "}
                             <span className="text-green-500">
-                              'your-api-key'
+                              &apos;your-api-key&apos;
                             </span>
                             ,{"\n  "}
                             <span className="text-green-500">
-                              'your-secret-key'
+                              &apos;your-secret-key&apos;
                             </span>
                             {"\n"});
                             {"\n\n"}
                             <span className="text-gray-500">
-                              // Send an email using a template
+                               {'//'} Send an email using a template
                             </span>
                             {"\n"}
                             <span className="text-blue-500">const</span>{" "}
@@ -497,12 +497,12 @@ export default function LandingPage() {
                               templateId
                             </span>:{" "}
                             <span className="text-green-500">
-                              'welcome-email'
+                              &apos;welcome-email&apos;
                             </span>
                             ,{"\n  "}
                             <span className="text-red-500">to</span>:{" "}
                             <span className="text-green-500">
-                              'user@example.com'
+                              &apos;user@example.com&apos;
                             </span>
                             ,{"\n  "}
                             <span className="text-red-500">
@@ -510,10 +510,10 @@ export default function LandingPage() {
                             </span>: {"{"}
                             {"\n    "}
                             <span className="text-red-500">name</span>:{" "}
-                            <span className="text-green-500">'John Doe'</span>,
+                            <span className="text-green-500">&apos;John Doe&apos;</span>,
                             {"\n    "}
                             <span className="text-red-500">company</span>:{" "}
-                            <span className="text-green-500">'Acme Corp'</span>
+                            <span className="text-green-500">&apos;Acme Corp&apos;</span>
                             {"\n  "}
                             {"}"}
                             {"\n"});
@@ -612,7 +612,7 @@ export default function LandingPage() {
                   )}
                 </div>
                 <blockquote className="text-xl mb-6 leading-relaxed">
-                  "{testimonials[currentTestimonial].content}"
+                  &quot;{testimonials[currentTestimonial].content}&quot;
                 </blockquote>
                 <div className="flex items-center justify-center space-x-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-purple-600 flex items-center justify-center text-white font-bold">
