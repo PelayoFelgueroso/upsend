@@ -34,7 +34,7 @@ export const GET = withAuth(async (req, { params }) => {
       recipient: log.recipient,
       subject: log.subject,
       status: log.status.toLowerCase(),
-      messageId: log.messageId,
+      content: log.content,
       error: log.error,
       sentAt: log.sentAt,
       // Add more detailed fields if available in your schema

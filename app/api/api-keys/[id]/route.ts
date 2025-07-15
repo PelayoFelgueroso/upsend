@@ -3,10 +3,10 @@ import { db } from "@/lib/db";
 import { withAuth } from "@/auth/middlewares/authmiddleware";
 
 export const DELETE = withAuth(
-  async (req, { params }: { params: { id: string } }) => {
+  async (request, { params }: { params: Promise<{ id: string }> }) => {
     try {
-      const userId = req.user!.id;
-      const keyId = params.id;
+      const { id: keyId } = await params;
+      const userId = request.user!.id;
 
       // Check if API key exists and belongs to user
       const apiKey = await db.apiKey.findFirst({

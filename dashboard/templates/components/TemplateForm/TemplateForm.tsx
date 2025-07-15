@@ -24,7 +24,7 @@ interface Props {
   template?: EmailTemplate;
 }
 
-export const EditTemplateForm = ({ template, id }: Props) => {
+export const TemplateForm = ({ template, id }: Props) => {
   const router = useRouter();
   const createTemplate = useCreateTemplate();
   const updateTemplateMutation = useUpdateTemplate();
@@ -35,8 +35,6 @@ export const EditTemplateForm = ({ template, id }: Props) => {
       name: "",
       subject: "",
       content: "",
-      type: "TRANSACTIONAL",
-      status: "DRAFT",
     },
   });
 
@@ -60,7 +58,7 @@ export const EditTemplateForm = ({ template, id }: Props) => {
         status: template.status as TemplateStatus,
       });
     }
-  }, [template, reset]);
+  }, [template]);
 
   const watchedValues = watch();
 
@@ -81,7 +79,6 @@ export const EditTemplateForm = ({ template, id }: Props) => {
             status: data.status,
           },
         });
-        reset(data); // Reset form dirty state
       } catch {
         // Error handled by mutation
       }

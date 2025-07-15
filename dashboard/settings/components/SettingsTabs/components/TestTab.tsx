@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Mail, Send, CheckCircle, XCircle, Loader2 } from "lucide-react";
 import { SmtpConfig } from "@prisma/client";
@@ -20,6 +19,14 @@ import {
 } from "@/dashboard/settings/schemas/smtp.schema";
 import { useSendTestEmail } from "@/dashboard/settings/hooks/useSMTP";
 import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 
 interface Props {
   smtpConfig?: SmtpConfig;
@@ -28,16 +35,18 @@ interface Props {
 export const TestTab = ({ smtpConfig }: Props) => {
   const sendTestEmailMutation = useSendTestEmail();
 
-  const testEmailForm = useForm<TestEmailForm>({
+  const form = useForm<TestEmailForm>({
     resolver: zodResolver(testEmailSchema),
     defaultValues: {
       testEmail: "",
     },
   });
 
+  const { handleSubmit, control } = form;
+
   const onSendTestEmail = async (data: TestEmailForm) => {
     await sendTestEmailMutation.mutateAsync(data.testEmail);
-    testEmailForm.reset();
+    form.reset();
   };
   return (
     <Card>
@@ -68,33 +77,42 @@ export const TestTab = ({ smtpConfig }: Props) => {
               </AlertDescription>
             </Alert>
 
-            <div className="space-y-2">
-              <Label htmlFor="testEmail">Test Email Address</Label>
-              <Input
-                id="testEmail"
-                type="email"
-                placeholder="test@example.com"
-                {...testEmailForm.register("testEmail")}
-              />
-              {testEmailForm.formState.errors.testEmail && (
-                <p className="text-sm text-destructive">
-                  {testEmailForm.formState.errors.testEmail.message}
-                </p>
-              )}
-            </div>
+            <Form {...form}>
+              <form onSubmit={handleSubmit(onSendTestEmail)} className="space-y-4">
+                <FormField
+                  control={control}
+                  name="testEmail"
+                  render={({ field }) => (
+                    <FormItem className="space-y-2">
+                      <FormLabel>Test Email Address</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="test@example.com"
+                          {...field}
+                          required
+                        />
+                      </FormControl>
 
-            <Button
-              onClick={testEmailForm.handleSubmit(onSendTestEmail)}
-              disabled={sendTestEmailMutation.isPending}
-              className="w-full"
-            >
-              {sendTestEmailMutation.isPending ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              ) : (
-                <Mail className="mr-2 h-4 w-4" />
-              )}
-              Send Test Email
-            </Button>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button
+                  disabled={sendTestEmailMutation.isPending}
+                  className="w-full"
+                  type="submit"
+                >
+                  {sendTestEmailMutation.isPending ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <Mail className="mr-2 h-4 w-4" />
+                  )}
+                  Send Test Email
+                </Button>
+              </form>
+            </Form>
           </div>
         )}
       </CardContent>

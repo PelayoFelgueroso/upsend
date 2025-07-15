@@ -107,7 +107,9 @@ export const PATCH = withAuth(async (req: AuthenticatedRequest) => {
       where: { id: templateId },
       data: {
         ...data,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         type: data.type as any,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         status: data.status as any,
       },
       include: {

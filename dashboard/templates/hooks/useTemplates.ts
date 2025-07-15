@@ -1,4 +1,4 @@
-import { Pagination } from "@/dashboard/models";
+import { PaginationType } from "@/dashboard/models";
 import api from "@/lib/axios";
 import { EmailTemplate } from "@prisma/client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 interface TemplatesResponse {
   templates: EmailTemplate[];
-  pagination: Pagination;
+  pagination: PaginationType;
 }
 
 interface TemplatesParams {
@@ -75,6 +75,7 @@ export function useCreateTemplate() {
       queryClient.invalidateQueries({ queryKey: ["templates"] });
       toast.success("Template created successfully");
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onError: (error: any) => {
       const message =
         error.response?.data?.message || "Failed to create template";
@@ -102,6 +103,7 @@ export function useUpdateTemplate() {
       queryClient.setQueryData(["template", data.id], data);
       toast.success("Template updated successfully");
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onError: (error: any) => {
       const message =
         error.response?.data?.message || "Failed to update template";
@@ -121,6 +123,7 @@ export function useDeleteTemplate() {
       queryClient.invalidateQueries({ queryKey: ["templates"] });
       toast.success("Template deleted successfully");
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onError: (error: any) => {
       const message =
         error.response?.data?.message || "Failed to delete template";
@@ -141,6 +144,7 @@ export function useDuplicateTemplate() {
       queryClient.invalidateQueries({ queryKey: ["templates"] });
       toast.success("Template duplicated successfully");
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onError: (error: any) => {
       const message =
         error.response?.data?.message || "Failed to duplicate template";
@@ -155,6 +159,7 @@ export function useTestTemplate() {
       try {
         const response = await api.post(`/templates/${id}/send-test`);
         return response.data;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         const message =
           error.response?.data?.error || "Failed to send test email";

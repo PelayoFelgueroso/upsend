@@ -1,7 +1,7 @@
 "use client";
 
 import { NewTemplateHeader } from "@/dashboard/templates/components/NewTemplatePage/NewTemplateHeader";
-import { EditTemplateForm } from "@/dashboard/templates/components/EditTemplateForm/EditTemplateForm";
+import { TemplateForm } from "@/dashboard/templates/components/TemplateForm/TemplateForm";
 
 export default function NewTemplatePage() {
   return (
@@ -10,7 +10,7 @@ export default function NewTemplatePage() {
         <NewTemplateHeader />
       </div>
 
-      <EditTemplateForm />
+      <TemplateForm />
     </div>
   );
 }

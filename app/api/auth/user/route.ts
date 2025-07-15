@@ -22,6 +22,7 @@ export const GET = withAuth(async (req: AuthenticatedRequest) => {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: _, usage, ...rest } = user;
 
     const safeUser = {
@@ -82,6 +83,7 @@ export const PATCH = withAuth(async (req: AuthenticatedRequest) => {
       },
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: _, ...userWithoutPassword } = updatedUser;
     return NextResponse.json({ user: userWithoutPassword });
   } catch (error) {

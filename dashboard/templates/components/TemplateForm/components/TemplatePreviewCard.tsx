@@ -24,7 +24,7 @@ export const TemplatePreviewCard = ({ watchedValues }: Props) => {
         <CardDescription>{t("form.previewDesc")}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="border rounded-lg p-4 bg-white min-h-[400px]">
+        <div className="border rounded-lg p-4 bg-white text-black min-h-[400px]">
           <div className="border-b pb-2 mb-4">
             <div className="font-semibold">
               {t("form.subjectPreview", {

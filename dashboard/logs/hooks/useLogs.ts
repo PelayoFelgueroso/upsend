@@ -1,4 +1,4 @@
-import { Pagination } from "@/dashboard/models";
+import { PaginationType } from "@/dashboard/models";
 import api from "@/lib/axios";
 import { EmailStatus } from "@prisma/client";
 import { useQuery, useMutation } from "@tanstack/react-query";
@@ -17,7 +17,7 @@ export interface EmailLogResponse {
 
 interface LogsResponse {
   logs: EmailLogResponse[];
-  pagination: Pagination;
+  pagination: PaginationType;
 }
 
 interface LogsParams {
@@ -82,6 +82,7 @@ export function useExportLogs() {
 
       toast.success("Logs exported successfully");
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onError: (error: any) => {
       const message = error.response?.data?.message || "Failed to export logs";
       toast.error(message);

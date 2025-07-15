@@ -74,7 +74,7 @@ export function useDashboardActivity(limit = 10) {
 }
 
 export function useDashboardAnalytics(
-  period: "7days" | "30days" | "6months" = "6months"
+  period: "7days" | "30days" | "6months" = "7days"
 ) {
   return useQuery({
     queryKey: ["dashboard", "analytics", period],

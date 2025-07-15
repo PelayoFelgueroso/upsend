@@ -10,6 +10,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -37,7 +45,7 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
   const deleteSmtpMutation = useDeleteSmtpConfig();
   const saveSmtpMutation = useSaveSmtpConfig();
 
-  const smtpForm = useForm<SmtpConfigForm>({
+  const form = useForm<SmtpConfigForm>({
     resolver: zodResolver(smtpConfigSchema),
     defaultValues: {
       host: "",
@@ -47,23 +55,25 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
     },
   });
 
+  const { handleSubmit, reset, setValue, control } = form;
+
   useEffect(() => {
     if (smtpConfig) {
-      smtpForm.reset({
+      reset({
         host: smtpConfig.host,
         port: smtpConfig.port,
         username: smtpConfig.username,
         password: smtpConfig.password,
       });
     }
-  }, [smtpConfig, smtpForm]);
+  }, [smtpConfig, reset]);
 
   const onSaveSmtp = async (data: SmtpConfigForm) => {
     await saveSmtpMutation.mutateAsync(data);
   };
 
   const onTestConnection = async () => {
-    const formData = smtpForm.getValues();
+    const formData = form.getValues();
     await testConnectionMutation.mutateAsync({
       host: formData.host,
       port: formData.port,
@@ -75,7 +85,7 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
   const onDeleteConfig = async () => {
     if (confirm("Are you sure you want to delete the SMTP configuration?")) {
       await deleteSmtpMutation.mutateAsync();
-      smtpForm.reset();
+      form.reset();
     }
   };
 
@@ -111,128 +121,149 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
           </Alert>
         )}
 
-        <div className="grid gap-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="host">SMTP Host</Label>
-              <Input
-                id="host"
-                placeholder="smtp.gmail.com"
-                {...smtpForm.register("host")}
-              />
-              {smtpForm.formState.errors.host && (
-                <p className="text-sm text-destructive">
-                  {smtpForm.formState.errors.host.message}
-                </p>
-              )}
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="port">Port</Label>
-              <Input
-                id="port"
-                type="number"
-                placeholder="587"
-                {...smtpForm.register("port", { valueAsNumber: true })}
-              />
-              {smtpForm.formState.errors.port && (
-                <p className="text-sm text-destructive">
-                  {smtpForm.formState.errors.port.message}
-                </p>
-              )}
-            </div>
-          </div>
+        <Form {...form}>
+          <form onSubmit={handleSubmit(onSaveSmtp)} className="grid gap-4">
+            <div className="grid grid-cols-2 gap-4">
+              <FormField
+                control={control}
+                name="host"
+                render={({ field }) => (
+                  <FormItem className="space-y-2">
+                    <FormLabel>SMTP Host</FormLabel>
+                    <FormControl>
+                      <Input placeholder="smtp.gmail.com" {...field} required />
+                    </FormControl>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="username">Username/Email</Label>
-              <Input
-                id="username"
-                placeholder="your-email@gmail.com"
-                {...smtpForm.register("username")}
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-              {smtpForm.formState.errors.username && (
-                <p className="text-sm text-destructive">
-                  {smtpForm.formState.errors.username.message}
-                </p>
-              )}
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password/App Password</Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="••••••••••••"
-                {...smtpForm.register("password")}
+
+              <FormField
+                control={control}
+                name="port"
+                render={({ field }) => (
+                  <FormItem className="space-y-2">
+                    <FormLabel>Port</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="587"
+                        {...field}
+                        required
+                        type="number"
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-              {smtpForm.formState.errors.password && (
-                <p className="text-sm text-destructive">
-                  {smtpForm.formState.errors.password.message}
-                </p>
-              )}
             </div>
-          </div>
 
-          <Separator />
+            <div className="grid grid-cols-2 gap-4">
+              <FormField
+                control={control}
+                name="username"
+                render={({ field }) => (
+                  <FormItem className="space-y-2">
+                    <FormLabel>Username/Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="example@domain.com"
+                        {...field}
+                        required
+                        autoComplete="email"
+                      />
+                    </FormControl>
 
-          <div className="space-y-3">
-            <Label>Quick Setup - Common Providers</Label>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-              {commonProviders.map((provider) => (
-                <Button
-                  key={provider.name}
-                  variant="outline"
-                  size="sm"
-                  onClick={() => {
-                    smtpForm.setValue("host", provider.host);
-                    smtpForm.setValue("port", provider.port);
-                  }}
-                >
-                  {provider.name}
-                </Button>
-              ))}
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem className="space-y-2">
+                    <FormLabel>Password/App Password</FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        required
+                        type="password"
+                        placeholder="••••••••••••"
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
-          </div>
 
-          <div className="flex gap-2">
-            <Button
-              onClick={onTestConnection}
-              variant="outline"
-              disabled={testConnectionMutation.isPending}
-            >
-              {testConnectionMutation.isPending ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              ) : (
-                <CheckCircle className="mr-2 h-4 w-4" />
-              )}
-              Test Connection
-            </Button>
-            <Button
-              onClick={smtpForm.handleSubmit(onSaveSmtp)}
-              disabled={saveSmtpMutation.isPending}
-            >
-              {saveSmtpMutation.isPending ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              ) : (
-                <Settings className="mr-2 h-4 w-4" />
-              )}
-              Save Configuration
-            </Button>
-            {smtpConfig && (
+            <Separator />
+
+            <div className="space-y-3">
+              <Label>Quick Setup - Common Providers</Label>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                {commonProviders.map((provider) => (
+                  <Button
+                    key={provider.name}
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      setValue("host", provider.host);
+                      setValue("port", provider.port);
+                    }}
+                  >
+                    {provider.name}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex gap-2">
               <Button
-                onClick={onDeleteConfig}
-                variant="destructive"
-                disabled={deleteSmtpMutation.isPending}
+                onClick={onTestConnection}
+                variant="outline"
+                disabled={testConnectionMutation.isPending}
               >
-                {deleteSmtpMutation.isPending ? (
+                {testConnectionMutation.isPending ? (
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
-                  <Trash2 className="mr-2 h-4 w-4" />
+                  <CheckCircle className="mr-2 h-4 w-4" />
                 )}
-                Delete
+                Test Connection
               </Button>
-            )}
-          </div>
-        </div>
+              <Button
+                onClick={handleSubmit(onSaveSmtp)}
+                disabled={saveSmtpMutation.isPending}
+              >
+                {saveSmtpMutation.isPending ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                ) : (
+                  <Settings className="mr-2 h-4 w-4" />
+                )}
+                Save Configuration
+              </Button>
+              {smtpConfig && (
+                <Button
+                  onClick={onDeleteConfig}
+                  variant="destructive"
+                  disabled={deleteSmtpMutation.isPending}
+                >
+                  {deleteSmtpMutation.isPending ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <Trash2 className="mr-2 h-4 w-4" />
+                  )}
+                  Delete
+                </Button>
+              )}
+            </div>
+          </form>
+        </Form>
       </CardContent>
     </Card>
   );
