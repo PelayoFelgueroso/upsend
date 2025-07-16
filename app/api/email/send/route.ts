@@ -12,16 +12,17 @@ const EmailSchema = z.object({
 const allowedMethods = ["POST", "OPTIONS"];
 const allowedHeaders = "Content-Type, x-api-key, x-secret-key";
 
+function setCorsHeaders(res: NextResponse, origin: string) {
+  res.headers.set("Access-Control-Allow-Origin", origin);
+  res.headers.set("Access-Control-Allow-Methods", allowedMethods.join(", "));
+  res.headers.set("Access-Control-Allow-Headers", allowedHeaders);
+  return res;
+}
+
 export async function OPTIONS(req: NextRequest) {
   const origin = req.headers.get("origin") || "*";
   const response = new NextResponse(null, { status: 204 });
-  response.headers.set("Access-Control-Allow-Origin", origin);
-  response.headers.set(
-    "Access-Control-Allow-Methods",
-    allowedMethods.join(", ")
-  );
-  response.headers.set("Access-Control-Allow-Headers", allowedHeaders);
-  return response;
+  return setCorsHeaders(response, origin);
 }
 
 export async function POST(req: NextRequest) {
@@ -36,8 +37,7 @@ export async function POST(req: NextRequest) {
         { error: "API key & secret key are required" },
         { status: 401 }
       );
-      res.headers.set("Access-Control-Allow-Origin", origin);
-      return res;
+      return setCorsHeaders(res, origin);
     }
 
     const client = await verifyKeys(apiKey, secretKey);
@@ -46,8 +46,7 @@ export async function POST(req: NextRequest) {
         { error: "Invalid credentials" },
         { status: 403 }
       );
-      res.headers.set("Access-Control-Allow-Origin", origin);
-      return res;
+      return setCorsHeaders(res, origin);
     }
 
     let body: unknown;
@@ -55,8 +54,7 @@ export async function POST(req: NextRequest) {
       body = await req.json();
     } catch (error) {
       const res = NextResponse.json({ error }, { status: 400 });
-      res.headers.set("Access-Control-Allow-Origin", origin);
-      return res;
+      return setCorsHeaders(res, origin);
     }
 
     const parseResult = EmailSchema.safeParse(body);
@@ -68,8 +66,7 @@ export async function POST(req: NextRequest) {
         },
         { status: 400 }
       );
-      res.headers.set("Access-Control-Allow-Origin", origin);
-      return res;
+      return setCorsHeaders(res, origin);
     }
 
     const { to, templateId, variables } = parseResult.data;
@@ -86,16 +83,14 @@ export async function POST(req: NextRequest) {
       messageId: result.messageId,
       timestamp: new Date().toISOString(),
     });
-    res.headers.set("Access-Control-Allow-Origin", origin);
-    return res;
+    return setCorsHeaders(res, origin);
   } catch (error) {
     if (error instanceof z.ZodError) {
       const res = NextResponse.json(
         { error: "Validation failed", details: error.errors },
         { status: 400 }
       );
-      res.headers.set("Access-Control-Allow-Origin", origin);
-      return res;
+      return setCorsHeaders(res, origin);
     }
 
     console.error("Error sending email:", error);
@@ -107,7 +102,6 @@ export async function POST(req: NextRequest) {
       },
       { status: 500 }
     );
-    res.headers.set("Access-Control-Allow-Origin", origin);
-    return res;
+    return setCorsHeaders(res, origin);
   }
 }
