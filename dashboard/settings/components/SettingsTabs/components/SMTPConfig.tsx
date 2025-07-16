@@ -78,6 +78,7 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
         replyToEmail: smtpConfig.replyToEmail || undefined,
       });
     }
+    console.log(smtpConfig)
   }, [smtpConfig, reset]);
 
   const onSaveSmtp = async (data: SmtpConfigForm) => {
