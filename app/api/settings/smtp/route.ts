@@ -22,7 +22,14 @@ export const GET = withAuth(async (req) => {
       where: { userId: user.id, isActive: true },
     });
 
-    return NextResponse.json(config);
+    if (!config) {
+      return NextResponse.json(config);
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { password: _, ...configWithoutPassword } = config;
+
+    return NextResponse.json(configWithoutPassword);
   } catch (error) {
     console.error("Error fetching SMTP config:", error);
     return NextResponse.json(
