@@ -37,9 +37,13 @@ export async function verifyKeys(
       },
     });
 
+    if (!apiKeyRecord) {
+      console.error("No apiKey found");
+      return null;
+    }
 
-    if (!apiKeyRecord || apiKeyRecord.userId !== secretKey) {
-      console.error("bad coincidence")
+    if (apiKeyRecord.userId !== secretKey) {
+      console.error("bad coincidence");
       return null;
     }
 
