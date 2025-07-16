@@ -22,7 +22,6 @@ export async function verifyKeys(
     const apiKeyRecord = await db.apiKey.findFirst({
       where: {
         key: apiKey,
-        status: "ACTIVE",
       },
       include: {
         user: {
