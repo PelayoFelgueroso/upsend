@@ -37,7 +37,9 @@ export async function verifyKeys(
       },
     });
 
-    if (!apiKeyRecord || apiKeyRecord.user.id !== secretKey) {
+    console.log(apiKeyRecord.key, secretKey)
+
+    if (!apiKeyRecord || apiKeyRecord.userId !== secretKey) {
       return null;
     }
 
