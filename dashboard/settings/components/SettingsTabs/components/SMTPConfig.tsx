@@ -32,7 +32,14 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SmtpConfig } from "@prisma/client";
 import { Separator } from "@radix-ui/react-select";
-import { CheckCircle, Loader2, Server, Settings, Trash2 } from "lucide-react";
+import {
+  CheckCircle,
+  Loader2,
+  Server,
+  Settings,
+  Trash2,
+  User,
+} from "lucide-react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
@@ -204,6 +211,78 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
 
             <Separator />
 
+            <div className="space-y-4">
+              <div>
+                <CardTitle className="flex items-center gap-2">
+                  <User className="h-5 w-5" />
+                  Sender Information
+                </CardTitle>
+                <CardDescription>
+                  Configure how your emails appear to recipients.
+                </CardDescription>
+              </div>
+
+              <FormField
+                control={control}
+                name="fromName"
+                render={({ field }) => (
+                  <FormItem className="space-y-2">
+                    <FormLabel>From Name</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Your Company Name"
+                        {...field}
+                        required
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={control}
+                name="fromEmail"
+                render={({ field }) => (
+                  <FormItem className="space-y-2">
+                    <FormLabel>From Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="noreply@yourcompany.com"
+                        {...field}
+                        required
+                        type="email"
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={control}
+                name="replyToEmail"
+                render={({ field }) => (
+                  <FormItem className="space-y-2">
+                    <FormLabel>Reply-To Email (Optional)</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="support@yourcompany.com"
+                        {...field}
+                        required
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            <Separator />
+
             <div className="space-y-3">
               <Label>Quick Setup - Common Providers</Label>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -222,6 +301,8 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
                 ))}
               </div>
             </div>
+
+            <Separator />
 
             <div className="flex gap-2">
               <Button
