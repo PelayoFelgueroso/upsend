@@ -37,8 +37,6 @@ function LogsContent() {
   const logs = data?.logs || [];
   const pagination = data?.pagination;
 
-  console.log(logs);
-
   return (
     <div className="flex-1 space-y-4">
       <div className="flex items-center justify-between">
