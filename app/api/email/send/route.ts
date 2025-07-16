@@ -46,6 +46,7 @@ export async function POST(req: NextRequest) {
         { error: "Invalid credentials" },
         { status: 403 }
       );
+      console.log("falooooo")
       return setCorsHeaders(res, origin);
     }
 
