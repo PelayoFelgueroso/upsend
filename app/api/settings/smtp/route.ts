@@ -83,9 +83,8 @@ export const DELETE = withAuth(async (req) => {
   try {
     const user = req.user!;
 
-    await prisma.smtpConfig.updateMany({
+    await prisma.smtpConfig.delete({
       where: { userId: user.id },
-      data: { isActive: false },
     });
 
     return NextResponse.json({

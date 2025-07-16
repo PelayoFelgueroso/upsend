@@ -21,6 +21,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
   useDeleteSmtpConfig,
   useSaveSmtpConfig,
   useTestSmtpConnection,
@@ -78,7 +83,6 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
         replyToEmail: smtpConfig.replyToEmail || undefined,
       });
     }
-    console.log(smtpConfig)
   }, [smtpConfig, reset]);
 
   const onSaveSmtp = async (data: SmtpConfigForm) => {
@@ -198,19 +202,28 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
                 control={control}
                 name="password"
                 render={({ field }) => (
-                  <FormItem className="space-y-2">
-                    <FormLabel>Password/App Password</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        required
-                        type="password"
-                        placeholder="••••••••••••"
-                      />
-                    </FormControl>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <FormItem className="space-y-2">
+                        <FormLabel>Password/App Password</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            required
+                            type="password"
+                            placeholder="••••••••••••"
+                            disabled={smtpConfig ? true : false}
+                          />
+                        </FormControl>
 
-                    <FormMessage />
-                  </FormItem>
+                        <FormMessage />
+                      </FormItem>
+                    </TooltipTrigger>
+
+                    <TooltipContent>
+                      <p>Please delete this configuration to change password</p>
+                    </TooltipContent>
+                  </Tooltip>
                 )}
               />
             </div>
