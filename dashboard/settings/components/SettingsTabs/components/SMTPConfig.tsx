@@ -59,6 +59,9 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
       port: 587,
       username: "",
       password: "",
+      fromName: "",
+      fromEmail: "",
+      replyToEmail: undefined,
     },
   });
 
@@ -70,7 +73,9 @@ export const SMTPConfig = ({ smtpConfig }: Props) => {
         host: smtpConfig.host,
         port: smtpConfig.port,
         username: smtpConfig.username,
-        password: smtpConfig.password,
+        fromName: smtpConfig.fromName,
+        fromEmail: smtpConfig.fromEmail,
+        replyToEmail: smtpConfig.replyToEmail || undefined,
       });
     }
   }, [smtpConfig, reset]);
