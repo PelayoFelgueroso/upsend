@@ -6,6 +6,7 @@ import {
   TestConnectionResult,
 } from "../models/email";
 import { renderTemplate } from "@/lib/handlebars";
+import { decrypt } from "@/lib/crypto";
 
 export class EmailService {
   static async getSmtpConfig(userId: string) {
@@ -26,13 +27,15 @@ export class EmailService {
   static async createTransporter(userId: string) {
     const config = await this.getSmtpConfig(userId);
 
+    const decryptedPassword = decrypt(config.password);
+
     return nodemailer.createTransport({
       host: config.host,
       port: config.port,
       secure: config.port === 465,
       auth: {
         user: config.username,
-        pass: config.password,
+        pass: decryptedPassword,
       },
       tls: {
         rejectUnauthorized: false,

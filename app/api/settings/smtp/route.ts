@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { withAuth } from "@/auth/middlewares/authmiddleware";
-import { hashPassword } from "@/auth/lib/hash";
+import { encrypt } from "@/lib/crypto";
 
 const smtpConfigSchema = z.object({
   host: z.string().min(1, "Host is required"),
@@ -48,13 +48,13 @@ export const POST = withAuth(async (req) => {
     const { password, ...rest } = validatedData;
 
     // Hash password
-    const hashed = await hashPassword(password);
+    const encryptedPassword = await encrypt(password);
 
     // Create new config
     const config = await prisma.smtpConfig.create({
       data: {
         ...rest,
-        password: hashed,
+        password: encryptedPassword,
         userId: user.id,
       },
     });
