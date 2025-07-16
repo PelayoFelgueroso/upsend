@@ -37,9 +37,9 @@ export async function verifyKeys(
       },
     });
 
-    console.log(apiKeyRecord.key, secretKey)
 
     if (!apiKeyRecord || apiKeyRecord.userId !== secretKey) {
+      console.error("bad coincidence")
       return null;
     }
 
