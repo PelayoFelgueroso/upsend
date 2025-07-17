@@ -1,0 +1,18 @@
+{
+  "loginTitle": "Inicia sesión en tu cuenta",
+  "loginDescription": "Introduce tu correo electrónico para iniciar sesión",
+  "emailLabel": "Correo electrónico",
+  "emailPlaceholder": "m@ejemplo.com",
+  "passwordLabel": "Contraseña",
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "passwordPlaceholder": "**********",
+  "showPassword": "Mostrar contraseña",
+  "hidePassword": "Ocultar contraseña",
+  "loggingIn": "Iniciando sesión...",
+  "logIn": "Iniciar sesión",
+  "loginError": "Error al iniciar sesión",
+  "orContinueWith": "O continúa con",
+  "loginWithGitHub": "Inicia sesión con GitHub",
+  "noAccount": "¿No tienes una cuenta?",
+  "signUp": "Regístrate"
+}

@@ -20,11 +20,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { useAuth } from "@/auth/providers/auth.provider";
 import { Alert, AlertDescription } from "../../components/ui/alert";
+import { useI18n } from "@/i18n/hooks/usei18n";
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  const { t } = useI18n("login");
   const { login, isAuthenticated, isLoading, error, clearError } = useAuth();
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
@@ -65,9 +67,9 @@ export function LoginForm({
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col items-center gap-2 text-center">
-          <h1 className="text-2xl font-bold">Login to your account</h1>
+          <h1 className="text-2xl font-bold">{t("loginTitle")}</h1>
           <p className="text-muted-foreground text-sm text-balance">
-            Enter your email below to login to your account
+            {t("loginDescription")}
           </p>
         </div>
         <div className="grid gap-6">
@@ -76,10 +78,10 @@ export function LoginForm({
             name="email"
             render={({ field }) => (
               <FormItem className="grid gap-3">
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{t("emailLabel")}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="m@example.com"
+                    placeholder={t("emailPlaceholder")}
                     {...field}
                     required
                     autoComplete="email"
@@ -97,12 +99,12 @@ export function LoginForm({
             render={({ field }) => (
               <FormItem className="grid gap-3">
                 <div className="flex items-center">
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t("passwordLabel")}</FormLabel>
                   <a
                     href="#"
                     className="ml-auto text-sm underline-offset-4 hover:underline"
                   >
-                    Forgot your password?
+                    {t("forgotPassword")}
                   </a>
                 </div>
                 <div className="relative">
@@ -112,7 +114,7 @@ export function LoginForm({
                       type={showPassword ? "text" : "password"}
                       {...field}
                       autoComplete="new-password"
-                      placeholder="**********"
+                      placeholder={t("passwordPlaceholder")}
                     />
                   </FormControl>
                   <Button
@@ -124,7 +126,7 @@ export function LoginForm({
                   >
                     {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                     <span className="sr-only">
-                      {showPassword ? "Hide password" : "Show password"}
+                      {showPassword ? t("showPassword") : t("hidePassword")}
                     </span>
                   </Button>
                 </div>
@@ -137,10 +139,10 @@ export function LoginForm({
             {isSubmitting || isLoading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Logging in...
+                {t("loggingIn")}
               </>
             ) : (
-              "Log In"
+              t("login")
             )}
           </Button>
           {error && (
@@ -150,7 +152,7 @@ export function LoginForm({
           )}
           <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
             <span className="bg-background text-muted-foreground relative z-10 px-2">
-              Or continue with
+              {t("orContinueWith")}
             </span>
           </div>
           <Button variant="outline" className="w-full">
@@ -160,13 +162,13 @@ export function LoginForm({
                 fill="currentColor"
               />
             </svg>
-            Login with GitHub
+            {t("loginWithGitHub")}
           </Button>
         </div>
         <div className="text-center text-sm">
-          Don&apos;t have an account?{" "}
+          {t("noAccount")}
           <Link href="/signup" className="underline underline-offset-4">
-            Sign up
+            {t("signUp")}
           </Link>
         </div>
       </form>

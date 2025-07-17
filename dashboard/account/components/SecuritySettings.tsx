@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -5,24 +7,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useI18n } from "@/i18n/hooks/usei18n";
 
 export const SecuritySettings = () => {
+  const { t } = useI18n("account");
+
   return (
     <Card className="card-warning">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-orange-500"></div>
-          Security Settings
+          {t("security.title")}
         </CardTitle>
-        <CardDescription>
-          Manage your account security preferences
-        </CardDescription>
+        <CardDescription>{t("security.description")}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="text-center py-8 text-muted-foreground">
-          Security settings will be implemented in the next phase.
+          {t("security.inProgressLine1")}
           <br />
-          This includes password changes, 2FA, and session management.
+          {t("security.inProgressLine2")}
         </div>
       </CardContent>
     </Card>

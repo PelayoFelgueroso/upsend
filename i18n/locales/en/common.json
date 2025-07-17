@@ -49,5 +49,11 @@
     "minLength": "Must be at least {{count}} characters",
     "maxLength": "Must be no more than {{count}} characters",
     "passwordMatch": "Passwords don't match"
+  },
+  "pagination": {
+    "showing": "Showing {{from}} to {{to}} of {{total}} logs",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {{current}} of {{totalPages}}"
   }
 }

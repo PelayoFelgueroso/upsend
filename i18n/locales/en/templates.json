@@ -1,11 +1,17 @@
 {
   "title": "Email Templates",
   "subtitle": "Create and manage your email templates",
+  "error": "Template not found or failed to load",
   "newTemplate": "New Template",
   "allTemplates": "All Templates",
+  "editTitle": "Edit Template",
+  "editSubtitle": "Modify your email template",
+  "newTitle": "New Template",
+  "newSubtitle": "Create a new email template",
   "searchPlaceholder": "Search templates...",
   "noTemplates": "No templates found",
   "createFirst": "Create your first template to get started",
+  "backTo": "Templates",
   "form": {
     "templateDetails": "Template Details",
     "templateDetailsDesc": "Basic information about your email template",
@@ -19,6 +25,12 @@
     "selectStatus": "Select template status",
     "emailContent": "Email Content",
     "emailContentDesc": "Write your email content using HTML or plain text",
+    "editorModeVisual": "Visual",
+    "editorModeHtml": "HTML",
+    "editorModeTooltipVisual": "<strong>Visual Editor:</strong> Drag & drop interface perfect for beginners. Create professional emails without coding.",
+    "editorModeTooltipHtml": "<strong>HTML Editor:</strong> Full code control with syntax highlighting for advanced users.",
+    "variablesTitle": "Using variables in the email",
+    "variablesDescription": "You can define variables in the email content using the syntax {{ variable }}. These variables will be dynamically replaced with the corresponding values when sending the email.",
     "content": "Content",
     "contentPlaceholder": "Enter your email content here...",
     "preview": "Preview",
@@ -43,12 +55,22 @@
     "draft": "Draft",
     "archived": "Archived"
   },
+  "filters": {
+    "statusPlaceholder": "Filter by status",
+    "typePlaceholder": "Filter by type",
+    "allTypes": "All Types",
+    "allStatus": "All Status"
+  },
   "actions": {
     "edit": "Edit",
     "duplicate": "Duplicate",
     "delete": "Delete",
     "activate": "Activate",
     "archive": "Archive"
+  },
+  "delete": {
+    "title": "Delete Template",
+    "description": "Are you sure you want to delete this template? This action cannot be undone"
   },
   "stats": {
     "usedTimes": "Used {{count}} times",

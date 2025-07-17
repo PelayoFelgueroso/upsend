@@ -1,11 +1,17 @@
 {
   "title": "Plantillas de Email",
   "subtitle": "Crea y gestiona tus plantillas de email",
+  "error": "No se ha encontrado la plantilla",
   "newTemplate": "Nueva Plantilla",
   "allTemplates": "Todas las Plantillas",
+  "editTitle": "Editar Plantilla",
+  "editSubtitle": "Modifica tu plantilla de email",
+  "newTitle": "Nueva Plantilla",
+  "newSubtitle": "Crea una nueva plantilla de email",
   "searchPlaceholder": "Buscar plantillas...",
   "noTemplates": "No se encontraron plantillas",
   "createFirst": "Crea tu primera plantilla para comenzar",
+  "backTo": "Plantillas",
   "form": {
     "templateDetails": "Detalles de la Plantilla",
     "templateDetailsDesc": "Información básica sobre tu plantilla de email",
@@ -19,6 +25,12 @@
     "selectStatus": "Selecciona el estatus de la plantilla",
     "emailContent": "Contenido del Email",
     "emailContentDesc": "Escribe el contenido de tu email usando HTML o texto plano",
+    "editorModeVisual": "Visual",
+    "editorModeHtml": "HTML",
+    "editorModeTooltipVisual": "<strong>Editor visual:</strong> Interfaz de arrastrar y soltar perfecta para principiantes. Crea correos profesionales sin necesidad de programar.",
+    "editorModeTooltipHtml": "<strong>Editor HTML:</strong> Control total del código con resaltado de sintaxis para usuarios avanzados.",
+    "variablesTitle": "Uso de variables en el correo",
+    "variablesDescription": "Puedes definir variables en el contenido del correo utilizando la sintaxis {{ variable }}. Estas variables se reemplazarán dinámicamente con los valores correspondientes al enviar el correo.",
     "content": "Contenido",
     "contentPlaceholder": "Ingresa el contenido de tu email aquí...",
     "preview": "Vista Previa",
@@ -43,12 +55,22 @@
     "draft": "Borrador",
     "archived": "Archivada"
   },
+  "filters": {
+    "statusPlaceholder": "Filtrar por estado",
+    "typePlaceholder": "Filtrar por tipo",
+    "allTypes": "Todos los tipos",
+    "allStatus": "Todos los estados"
+  },
   "actions": {
     "edit": "Editar",
     "duplicate": "Duplicar",
     "delete": "Eliminar",
     "activate": "Activar",
     "archive": "Archivar"
+  },
+  "delete": {
+    "title": "Borrar Plantilla",
+    "description": "¿Seguro que quieres borrar esta plantilla? Esta acción es irreversible"
   },
   "stats": {
     "usedTimes": "Usada {{count}} veces",

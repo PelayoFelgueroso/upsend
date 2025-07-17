@@ -48,5 +48,11 @@
     "minLength": "Muss mindestens {{count}} Zeichen haben",
     "maxLength": "Darf nicht mehr als {{count}} Zeichen haben",
     "passwordMatch": "Passwörter stimmen nicht überein"
+  },
+  "pagination": {
+    "showing": "Anzeigen von {{from}} bis {{to}} von {{total}} Protokollen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "page": "Seite {{current}} von {{totalPages}}"
   }
 }

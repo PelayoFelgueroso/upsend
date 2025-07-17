@@ -47,11 +47,11 @@ export const TemplateFilters = ({
       </div>
       <Select value={typeFilter} onValueChange={setTypeFilter}>
         <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder={t("form.selectType")} />
+          <SelectValue placeholder={t("filter.typePlaceholder")} />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="all">
-            {tCommon("actions.filter")} - All Types
+            {tCommon("actions.filter")} - {t("filters.allTypes")}
           </SelectItem>
           <SelectItem value="transactional">
             {t("types.transactional")}
@@ -64,10 +64,10 @@ export const TemplateFilters = ({
       </Select>
       <Select value={statusFilter} onValueChange={setStatusFilter}>
         <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Filter by status" />
+          <SelectValue placeholder={t("filters.statusPlaceholder")} />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">All Status</SelectItem>
+          <SelectItem value="all">{t("filters.allStatus")}</SelectItem>
           <SelectItem value="active">{t("status.active")}</SelectItem>
           <SelectItem value="draft">{t("status.draft")}</SelectItem>
           <SelectItem value="archived">{t("status.archived")}</SelectItem>

@@ -1,11 +1,17 @@
 {
   "title": "Modèles d'Email",
   "subtitle": "Créez et gérez vos modèles d'email",
+  "error": "Modèle introuvable ou échec du chargement",
   "newTemplate": "Nouveau Modèle",
   "allTemplates": "Tous les Modèles",
+  "editTitle": "Modifier le modèle",
+  "editSubtitle": "Modifiez votre modèle d'email",
+  "newTitle": "Nouveau Modèle",
+  "newSubtitle": "Créez un nouveau modèle d'email",
   "searchPlaceholder": "Rechercher des modèles...",
   "noTemplates": "Aucun modèle trouvé",
   "createFirst": "Créez votre premier modèle pour commencer",
+  "backTo": "Modèles",
   "form": {
     "templateDetails": "Détails du Modèle",
     "templateDetailsDesc": "Informations de base sur votre modèle d'email",
@@ -19,6 +25,12 @@
     "selectStatus": "Sélectionnez le statut du modèle",
     "emailContent": "Contenu de l'Email",
     "emailContentDesc": "Rédigez le contenu de votre email en HTML ou texte brut",
+    "editorModeVisual": "Visuel",
+    "editorModeHtml": "HTML",
+    "editorModeTooltipVisual": "<strong>Éditeur visuel :</strong> Interface glisser-déposer parfaite pour les débutants. Créez des emails professionnels sans coder.",
+    "editorModeTooltipHtml": "<strong>Éditeur HTML :</strong> Contrôle complet du code avec coloration syntaxique pour les utilisateurs avancés.",
+    "variablesTitle": "Utilisation des variables dans l'e-mail",
+    "variablesDescription": "Vous pouvez définir des variables dans le contenu de l'e-mail en utilisant la syntaxe {{ variable }}. Ces variables seront remplacées dynamiquement par les valeurs correspondantes lors de l'envoi de l'e-mail.",
     "content": "Contenu",
     "contentPlaceholder": "Saisissez le contenu de votre email ici...",
     "preview": "Aperçu",
@@ -43,12 +55,22 @@
     "draft": "Brouillon",
     "archived": "Archivé"
   },
+  "filters": {
+    "statusPlaceholder": "Filtrer par statut",
+    "typePlaceholder": "Filtrer par type",
+    "allTypes": "Tous les types",
+    "allStatus": "Tous les statuts"
+  },
   "actions": {
     "edit": "Modifier",
     "duplicate": "Dupliquer",
     "delete": "Supprimer",
     "activate": "Activer",
     "archive": "Archiver"
+  },
+  "delete": {
+    "title": "Supprimer le modèle",
+    "description": "Êtes-vous sûr de vouloir supprimer ce modèle ? Cette action est irréversible"
   },
   "stats": {
     "usedTimes": "Utilisé {{count}} fois",

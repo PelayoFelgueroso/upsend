@@ -30,9 +30,10 @@ import { RadioButtonField } from "@/dashboard/components/RadioButtonField";
 
 interface Props {
   control: Control<TemplateSchemaType>;
+  className?: string;
 }
 
-export const TemplateDetailsCard = ({ control }: Props) => {
+export const TemplateDetailsCard = ({ control, className }: Props) => {
   const { t } = useTemplatesTranslation();
 
   const templateTypeOptions = [
@@ -77,68 +78,47 @@ export const TemplateDetailsCard = ({ control }: Props) => {
     },
   ];
   return (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>{t("form.templateDetails")}</CardTitle>
-          <CardDescription>{t("form.templateDetailsDesc")}</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <FormField
-            control={control}
-            name="name"
-            render={({ field }) => (
-              <FormItem className="space-y-2">
-                <FormLabel>{t("form.templateName")}</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t("form.templateNamePlaceholder")}
-                    {...field}
-                    required
-                  />
-                </FormControl>
+    <Card className={className}>
+      <CardHeader>
+        <CardTitle>{t("form.templateDetails")}</CardTitle>
+        <CardDescription>{t("form.templateDetailsDesc")}</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <FormField
+          control={control}
+          name="name"
+          render={({ field }) => (
+            <FormItem className="space-y-2">
+              <FormLabel>{t("form.templateName")}</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder={t("form.templateNamePlaceholder")}
+                  {...field}
+                  required
+                />
+              </FormControl>
 
-                <FormMessage />
-              </FormItem>
-            )}
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <div className="grid grid-cols-2 gap-8">
+          <RadioButtonField
+            name="type"
+            label={t("form.templateType")}
+            control={control}
+            options={templateTypeOptions}
           />
 
-          <FormField
+          <RadioButtonField
+            name="status"
+            label={t("form.templateStatus")}
             control={control}
-            name="subject"
-            render={({ field }) => (
-              <FormItem className="space-y-2">
-                <FormLabel>{t("form.emailSubject")}</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t("form.emailSubjectPlaceholder")}
-                    {...field}
-                    required
-                  />
-                </FormControl>
-
-                <FormMessage />
-              </FormItem>
-            )}
+            options={templateStatusOptions}
           />
-
-          <div className="grid grid-cols-2 gap-8">
-            <RadioButtonField
-              name="type"
-              label={t("form.templateType")}
-              control={control}
-              options={templateTypeOptions}
-            />
-
-            <RadioButtonField
-              name="status"
-              label={t("form.templateStatus")}
-              control={control}
-              options={templateStatusOptions}
-            />
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 };

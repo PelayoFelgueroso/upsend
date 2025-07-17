@@ -15,11 +15,13 @@ import { useAuth } from "@/auth/providers/auth.provider";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useI18n } from "@/i18n/hooks/usei18n";
 
 export function SignupForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  const { t } = useI18n("signup");
   const { login, isAuthenticated, isLoading, error, clearError } = useAuth();
   const router = useRouter();
 
@@ -115,9 +117,9 @@ export function SignupForm({
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col items-center gap-2 text-center">
-          <h1 className="text-2xl font-bold">Create a new account</h1>
+          <h1 className="text-2xl font-bold">{t("title")}</h1>
           <p className="text-muted-foreground text-sm text-balance">
-            Enter your email below to create a new account
+            {t("description")}
           </p>
         </div>
         <div className="grid gap-6">
@@ -130,10 +132,10 @@ export function SignupForm({
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Creating account...
+                  {t("creating")}
                 </>
               ) : (
-                "Sign up"
+                t("signup")
               )}
             </Button>
           </div>
@@ -146,7 +148,7 @@ export function SignupForm({
           )}
           <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
             <span className="bg-background text-muted-foreground relative z-10 px-2">
-              Or continue with
+              {t("orContinue")}
             </span>
           </div>
           <Button variant="outline" className="w-full">
@@ -156,13 +158,13 @@ export function SignupForm({
                 fill="currentColor"
               />
             </svg>
-            Signup with GitHub
+            {t("signupWithGitHub")}
           </Button>
         </div>
         <div className="text-center text-sm">
-          Already have an account?{" "}
+          {t("already")}
           <Link href="/login" className="underline underline-offset-4">
-            Log in
+            {t("login")}
           </Link>
         </div>
       </form>

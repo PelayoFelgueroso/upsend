@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { PaginationType } from "@/dashboard/models";
+import { useI18n } from "@/i18n/hooks/usei18n";
 import { Dispatch, SetStateAction } from "react";
 
 interface Props {
@@ -9,12 +10,13 @@ interface Props {
 }
 
 export const Pagination = ({ pagination, page, setPage }: Props) => {
+  const { t } = useI18n("common");
+  const from = (pagination.page - 1) * pagination.limit + 1;
+  const to = Math.min(pagination.page * pagination.limit, pagination.total);
   return (
     <div className="flex items-center justify-between mt-4">
       <p className="text-sm text-muted-foreground">
-        Showing {(pagination.page - 1) * pagination.limit + 1} to{" "}
-        {Math.min(pagination.page * pagination.limit, pagination.total)} of{" "}
-        {pagination.total} logs
+        {t("pagination.showing", { from, to, total: pagination.total })}
       </p>
       <div className="flex items-center gap-2">
         <Button
@@ -23,10 +25,13 @@ export const Pagination = ({ pagination, page, setPage }: Props) => {
           onClick={() => setPage(page - 1)}
           disabled={page <= 1}
         >
-          Previous
+          {t("pagination.previous")}
         </Button>
         <span className="text-sm">
-          Page {pagination.page} of {pagination.pages}
+          {t("pagination.page", {
+            current: pagination.page,
+            totalPages: pagination.pages,
+          })}
         </span>
         <Button
           variant="outline"
@@ -34,7 +39,7 @@ export const Pagination = ({ pagination, page, setPage }: Props) => {
           onClick={() => setPage(page + 1)}
           disabled={page >= pagination.pages}
         >
-          Next
+          {t("pagination.next")}
         </Button>
       </div>
     </div>

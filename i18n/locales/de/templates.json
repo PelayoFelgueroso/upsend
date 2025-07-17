@@ -1,11 +1,17 @@
 {
   "title": "E-Mail-Vorlagen",
   "subtitle": "Erstellen und verwalten Sie Ihre E-Mail-Vorlagen",
+  "error": "Vorlage nicht gefunden oder konnte nicht geladen werden",
   "newTemplate": "Neue Vorlage",
   "allTemplates": "Alle Vorlagen",
+  "editTitle": "Vorlage bearbeiten",
+  "editSubtitle": "Bearbeiten Sie Ihre E-Mail-Vorlage",
+  "newTitle": "Neue Vorlage",
+  "newSubtitle": "Erstellen Sie eine neue E-Mail-Vorlage",
   "searchPlaceholder": "Vorlagen suchen...",
   "noTemplates": "Keine Vorlagen gefunden",
   "createFirst": "Erstellen Sie Ihre erste Vorlage, um zu beginnen",
+  "backTo": "Vorlagen",
   "form": {
     "templateDetails": "Vorlagen-Details",
     "templateDetailsDesc": "Grundlegende Informationen zu Ihrer E-Mail-Vorlage",
@@ -19,6 +25,12 @@
     "selectStatus": "Vorlagenstatus auswählen",
     "emailContent": "E-Mail-Inhalt",
     "emailContentDesc": "Schreiben Sie Ihren E-Mail-Inhalt in HTML oder Klartext",
+    "editorModeVisual": "Visuell",
+    "editorModeHtml": "HTML",
+    "editorModeTooltipVisual": "<strong>Visueller Editor:</strong> Drag-&-Drop-Oberfläche, ideal für Anfänger. Erstellen Sie professionelle E-Mails ohne Programmierkenntnisse.",
+    "editorModeTooltipHtml": "<strong>HTML-Editor:</strong> Volle Kontrolle über den Code mit Syntaxhervorhebung für fortgeschrittene Benutzer.",
+    "variablesTitle": "Verwendung von Variablen in der E-Mail",
+    "variablesDescription": "Sie können Variablen im E-Mail-Inhalt mit der Syntax {{ variable }} definieren. Diese Variablen werden beim Senden der E-Mail dynamisch durch die entsprechenden Werte ersetzt.",
     "content": "Inhalt",
     "contentPlaceholder": "Geben Sie hier Ihren E-Mail-Inhalt ein...",
     "preview": "Vorschau",
@@ -43,12 +55,22 @@
     "draft": "Entwurf",
     "archived": "Archiviert"
   },
+  "filters": {
+    "statusPlaceholder": "Nach Status filtern",
+    "typePlaceholder": "Nach Typ filtern",
+    "allTypes": "Alle Typen",
+    "allStatus": "Alle Status"
+  },
   "actions": {
     "edit": "Bearbeiten",
     "duplicate": "Duplizieren",
     "delete": "Löschen",
     "activate": "Aktivieren",
     "archive": "Archivieren"
+  },
+  "delete": {
+    "title": "Vorlage löschen",
+    "description": "Möchten Sie diese Vorlage wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden"
   },
   "stats": {
     "usedTimes": "{{count}} mal verwendet",

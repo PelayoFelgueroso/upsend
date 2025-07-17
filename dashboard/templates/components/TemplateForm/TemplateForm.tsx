@@ -1,7 +1,7 @@
 "use client";
 
 import { Form } from "@/components/ui/form";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { EmailTemplate, TemplateStatus, TemplateType } from "@prisma/client";
@@ -28,6 +28,7 @@ export const TemplateForm = ({ template, id }: Props) => {
   const router = useRouter();
   const createTemplate = useCreateTemplate();
   const updateTemplateMutation = useUpdateTemplate();
+  const didReset = useRef(false);
 
   const form = useForm<TemplateSchemaType>({
     resolver: zodResolver(templateSchema),
@@ -35,21 +36,22 @@ export const TemplateForm = ({ template, id }: Props) => {
       name: "",
       subject: "",
       content: "",
+      type: "TRANSACTIONAL",
+      status: "DRAFT",
     },
   });
 
   const {
-    register,
     control,
     handleSubmit,
     watch,
-    formState: { errors, isDirty },
+    formState: { isDirty },
     reset,
   } = form;
 
   // Update form when template data loads
   useEffect(() => {
-    if (template) {
+    if (template && !didReset.current) {
       reset({
         name: template.name,
         subject: template.subject,
@@ -57,8 +59,9 @@ export const TemplateForm = ({ template, id }: Props) => {
         type: template.type as TemplateType,
         status: template.status as TemplateStatus,
       });
+      didReset.current = true;
     }
-  }, [template]);
+  }, [template, reset]);
 
   const watchedValues = watch();
 
@@ -79,6 +82,7 @@ export const TemplateForm = ({ template, id }: Props) => {
             status: data.status,
           },
         });
+        reset(data);
       } catch {
         // Error handled by mutation
       }
@@ -89,17 +93,23 @@ export const TemplateForm = ({ template, id }: Props) => {
     <Form {...form}>
       <form onSubmit={handleSubmit(handleSave)}>
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="space-y-6">
-            <TemplateDetailsCard control={control} />
+          <TemplateDetailsCard control={control} className="lg:order-0" />
 
-            <TemplateContentCard errors={errors} register={register} />
-          </div>
+          <TemplateContentCard
+            control={control}
+            className="lg:col-span-2 lg:order-2"
+          />
 
-          <div className="space-y-6">
-            <TemplatePreviewCard watchedValues={watchedValues} />
-          </div>
+          <TemplatePreviewCard
+            watchedValues={watchedValues}
+            className="lg:order-1"
+          />
 
-          <TemplateOptionsFooter id={id} isDirty={isDirty} />
+          <TemplateOptionsFooter
+            id={id}
+            isDirty={isDirty}
+            className="lg:order-3"
+          />
         </div>
       </form>
     </Form>

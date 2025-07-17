@@ -1,0 +1,39 @@
+{
+  "title": "Kontoeinstellungen",
+  "subtitle": "Verwalte deine Kontoinformationen und Präferenzen",
+  "tabs": {
+    "profile": "Profil",
+    "usage": "Nutzung",
+    "security": "Sicherheit"
+  },
+  "profile": {
+    "title": "Profilinformationen",
+    "description": "Aktualisiere deine persönlichen Daten und Einstellungen",
+    "nameLabel": "Vollständiger Name *",
+    "namePlaceholder": "Max Mustermann",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "beispiel@mail.com",
+    "save": "Änderungen speichern",
+    "unsavedChanges": "Du hast ungespeicherte Änderungen",
+    "errorTitle": "Fehler beim Laden des Profils",
+    "errorDescription": "Benutzerprofil konnte nicht geladen werden. Bitte versuche es erneut."
+  },
+  "usage": {
+    "emailsSent": "Gesendete E-Mails",
+    "apiCalls": "API-Aufrufe",
+    "storageUsed": "Verwendeter Speicher",
+    "thisMonth": "Diesen Monat",
+    "limit": "Limit: {{value}}/Monat",
+    "limitGB": "Limit: {{value}} GB",
+    "storageDescription": "Vorlagen & Protokolle"
+  },
+  "security": {
+    "title": "Sicherheitseinstellungen",
+    "description": "Verwalte die Sicherheitseinstellungen deines Kontos",
+    "inProgressLine1": "Die Sicherheitseinstellungen werden in der nächsten Phase implementiert.",
+    "inProgressLine2": "Dazu gehören Passwortänderungen, 2FA und Sitzungsverwaltung."
+  },
+  "common": {
+    "unlimited": "Unbegrenzt"
+  }
+}

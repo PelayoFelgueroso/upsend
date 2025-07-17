@@ -2,14 +2,14 @@
 
 import { useState, use } from "react";
 import { useRouter } from "next/navigation";
-import { useCommonTranslation } from "@/i18n/hooks/usei18n";
+import { useCommonTranslation, useI18n } from "@/i18n/hooks/usei18n";
 import {
   useDeleteTemplate,
   useTemplate,
 } from "@/dashboard/templates/hooks/useTemplates";
 import { PageError } from "@/dashboard/components/PageError";
 import { DeleteDialog } from "@/dashboard/components/DeleteDialog";
-import { EditTemplateHeader } from "@/dashboard/templates/components/EditTemplatePage/EditTemplateHeader";
+import { EditTemplateHeader } from "@/dashboard/templates/components/EditTemplateHeader";
 import { TemplateForm } from "@/dashboard/templates/components/TemplateForm/TemplateForm";
 
 export default function EditTemplatePage({
@@ -17,6 +17,7 @@ export default function EditTemplatePage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const { t } = useI18n("templates");
   const resolvedParams = use(params);
   const id = resolvedParams.id;
   const router = useRouter();
@@ -52,7 +53,7 @@ export default function EditTemplatePage({
   }
 
   if (error || !template) {
-    return <PageError>Template not found or failed to load.</PageError>;
+    return <PageError>{t("error")}</PageError>;
   }
 
   return (
@@ -69,10 +70,8 @@ export default function EditTemplatePage({
         isOpen={deleteDialogOpen}
         setIsOpen={setDeleteDialogOpen}
         confirmDelete={confirmDelete}
-        title={"Delete Template"}
-        description={
-          "Are you sure you want to delete this template? This action cannot be undone."
-        }
+        title={t("delete.title")}
+        description={t("delete.description")}
         cancel={tCommon("actions.cancel")}
         action={tCommon("actions.delete")}
       />

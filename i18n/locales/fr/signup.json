@@ -1,0 +1,10 @@
+{
+  "title": "Créez un nouveau compte",
+  "description": "Entrez votre email pour créer un nouveau compte",
+  "creating": "Création du compte...",
+  "signup": "S'inscrire",
+  "orContinue": "Ou continuer avec",
+  "signupWithGitHub": "S'inscrire avec GitHub",
+  "already": "Vous avez déjà un compte ?",
+  "login": "Se connecter"
+}

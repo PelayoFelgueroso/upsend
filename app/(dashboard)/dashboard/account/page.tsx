@@ -21,15 +21,15 @@ export default function AccountPage() {
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="profile" className="flex items-center gap-2">
             <Settings className="h-4 w-4" />
-            Profile
+            {t("tabs.profile")}
           </TabsTrigger>
           <TabsTrigger value="usage" className="flex items-center gap-2">
             <BarChart3 className="h-4 w-4" />
-            Usage
+            {t("tabs.usage")}
           </TabsTrigger>
           <TabsTrigger value="security" className="flex items-center gap-2">
             <Shield className="h-4 w-4" />
-            Security
+            {t("tabs.security")}
           </TabsTrigger>
         </TabsList>
 
