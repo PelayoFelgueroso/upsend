@@ -48,5 +48,11 @@
     "minLength": "Doit contenir au moins {{count}} caractères",
     "maxLength": "Ne doit pas dépasser {{count}} caractères",
     "passwordMatch": "Les mots de passe ne correspondent pas"
+  },
+  "pagination": {
+    "showing": "Affichage de {{from}} à {{to}} sur {{total}} journaux",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {{current}} sur {{totalPages}}"
   }
 }

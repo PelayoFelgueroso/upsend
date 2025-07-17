@@ -1,40 +1,39 @@
 {
   "title": "Account Settings",
   "subtitle": "Manage your account information and preferences",
+  "tabs": {
+    "profile": "Profile",
+    "usage": "Usage",
+    "security": "Security"
+  },
   "profile": {
     "title": "Profile Information",
-    "description": "Update your personal information",
-    "name": "Full Name",
-    "email": "Email Address",
-    "avatar": "Profile Picture",
-    "changeAvatar": "Change Avatar",
-    "removeAvatar": "Remove Avatar"
+    "description": "Update your personal information and preferences",
+    "nameLabel": "Full Name *",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email",
+    "emailPlaceholder": "m@example.com",
+    "save": "Save Changes",
+    "unsavedChanges": "You have unsaved changes",
+    "errorTitle": "Error Loading Profile",
+    "errorDescription": "Failed to load user profile. Please try again."
+  },
+  "usage": {
+    "emailsSent": "Emails Sent",
+    "apiCalls": "API Calls",
+    "storageUsed": "Storage Used",
+    "thisMonth": "This month",
+    "limit": "Limit: {{value}}/month",
+    "limitGB": "Limit: {{value}} GB",
+    "storageDescription": "Templates & logs"
   },
   "security": {
-    "title": "Security",
-    "description": "Manage your account security settings",
-    "currentPassword": "Current Password",
-    "newPassword": "New Password",
-    "confirmPassword": "Confirm New Password",
-    "changePassword": "Change Password",
-    "passwordChanged": "Password changed successfully"
+    "title": "Security Settings",
+    "description": "Manage your account security preferences",
+    "inProgressLine1": "Security settings will be implemented in the next phase.",
+    "inProgressLine2": "This includes password changes, 2FA, and session management."
   },
-  "preferences": {
-    "title": "Preferences",
-    "description": "Customize your experience",
-    "language": "Language",
-    "timezone": "Timezone",
-    "notifications": "Email Notifications",
-    "marketing": "Marketing Emails",
-    "updates": "Product Updates"
-  },
-  "subscription": {
-    "title": "Subscription",
-    "description": "Manage your subscription and billing",
-    "currentPlan": "Current Plan",
-    "usage": "Usage",
-    "billing": "Billing",
-    "upgrade": "Upgrade Plan",
-    "cancel": "Cancel Subscription"
+  "common": {
+    "unlimited": "Unlimited"
   }
 }

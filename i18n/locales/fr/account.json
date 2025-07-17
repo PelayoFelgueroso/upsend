@@ -1,0 +1,39 @@
+{
+  "title": "Paramètres du compte",
+  "subtitle": "Gérez les informations et préférences de votre compte",
+  "tabs": {
+    "profile": "Profil",
+    "usage": "Utilisation",
+    "security": "Sécurité"
+  },
+  "profile": {
+    "title": "Informations du profil",
+    "description": "Mettez à jour vos informations personnelles et préférences",
+    "nameLabel": "Nom complet *",
+    "namePlaceholder": "Jean Dupont",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "exemple@mail.com",
+    "save": "Enregistrer les modifications",
+    "unsavedChanges": "Vous avez des modifications non enregistrées",
+    "errorTitle": "Erreur de chargement du profil",
+    "errorDescription": "Échec du chargement du profil utilisateur. Veuillez réessayer."
+  },
+  "usage": {
+    "emailsSent": "E-mails envoyés",
+    "apiCalls": "Appels API",
+    "storageUsed": "Stockage utilisé",
+    "thisMonth": "Ce mois-ci",
+    "limit": "Limite : {{value}}/mois",
+    "limitGB": "Limite : {{value}} Go",
+    "storageDescription": "Modèles et journaux"
+  },
+  "security": {
+    "title": "Paramètres de sécurité",
+    "description": "Gérez les préférences de sécurité de votre compte",
+    "inProgressLine1": "Les paramètres de sécurité seront mis en œuvre dans la prochaine phase.",
+    "inProgressLine2": "Cela inclura les changements de mot de passe, 2FA et la gestion des sessions."
+  },
+  "common": {
+    "unlimited": "Illimité"
+  }
+}

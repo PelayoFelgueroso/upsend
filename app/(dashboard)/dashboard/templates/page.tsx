@@ -96,10 +96,8 @@ function TemplatesContent() {
 
       {/* Delete Confirmation Dialog */}
       <DeleteDialog
-        title={"Delete Template"}
-        description={
-          "Are you sure you want to delete this template? This action cannot be undone."
-        }
+        title={t("delete.title")}
+        description={t("delete.description")}
         cancel={tCommon("actions.cancel")}
         action={tCommon("actions.delete")}
         isOpen={deleteDialogOpen}

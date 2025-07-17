@@ -1,5 +1,8 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useI18n } from "@/i18n/hooks/usei18n";
 
 interface Props {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -8,13 +11,14 @@ interface Props {
 }
 
 export const EmailStats = ({ usage, isLoading }: Props) => {
+  const { t } = useI18n("account");
   return (
     <div className="grid gap-4 md:grid-cols-3">
       <Card className="card-blue">
         <CardHeader className="pb-2">
           <CardTitle className="text-base flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-            Emails Sent
+            {t("usage.emailsSent")}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -29,11 +33,15 @@ export const EmailStats = ({ usage, isLoading }: Props) => {
               <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                 {usage?.emailsSent?.toLocaleString() || "0"}
               </div>
-              <div className="text-sm text-muted-foreground">This month</div>
+              <div className="text-sm text-muted-foreground">
+                {t("usage.thisMonth")}
+              </div>
               <div className="mt-2 text-xs text-muted-foreground">
-                Limit:{" "}
-                {usage?.limits.emailsPerMonth?.toLocaleString() || "Unlimited"}
-                /month
+                {t("usage.limit", {
+                  value:
+                    usage?.limits.emailsPerMonth?.toLocaleString() ||
+                    t("common.unlimited"),
+                })}
               </div>
             </>
           )}
@@ -44,7 +52,7 @@ export const EmailStats = ({ usage, isLoading }: Props) => {
         <CardHeader className="pb-2">
           <CardTitle className="text-base flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-            API Calls
+            {t("usage.apiCalls")}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -59,12 +67,15 @@ export const EmailStats = ({ usage, isLoading }: Props) => {
               <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
                 {usage?.apiCalls?.toLocaleString() || "0"}
               </div>
-              <div className="text-sm text-muted-foreground">This month</div>
+              <div className="text-sm text-muted-foreground">
+                {t("usage.thisMonth")}
+              </div>
               <div className="mt-2 text-xs text-muted-foreground">
-                Limit:{" "}
-                {usage?.limits.apiCallsPerMonth?.toLocaleString() ||
-                  "Unlimited"}
-                /month
+                {t("usage.limit", {
+                  value:
+                    usage?.limits.apiCallsPerMonth?.toLocaleString() ||
+                    t("common.unlimited"),
+                })}
               </div>
             </>
           )}
@@ -75,7 +86,7 @@ export const EmailStats = ({ usage, isLoading }: Props) => {
         <CardHeader className="pb-2">
           <CardTitle className="text-base flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-orange-500"></div>
-            Storage Used
+            {t("usage.storageUsed")}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -93,10 +104,12 @@ export const EmailStats = ({ usage, isLoading }: Props) => {
                   : "0 GB"}
               </div>
               <div className="text-sm text-muted-foreground">
-                Templates & logs
+                {t("usage.storageDescription")}
               </div>
               <div className="mt-2 text-xs text-muted-foreground">
-                Limit: {usage?.limits.storageGB || "Unlimited"} GB
+                {t("usage.limitGB", {
+                  value: usage?.limits.storageGB || t("common.unlimited"),
+                })}
               </div>
             </>
           )}

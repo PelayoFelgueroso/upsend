@@ -1,40 +1,39 @@
 {
   "title": "Configuración de Cuenta",
   "subtitle": "Gestiona la información de tu cuenta y preferencias",
+  "tabs": {
+    "profile": "Perfil",
+    "usage": "Uso",
+    "security": "Seguridad"
+  },
   "profile": {
-    "title": "Información del Perfil",
-    "description": "Actualiza tu información personal",
-    "name": "Nombre Completo",
-    "email": "Dirección de Email",
-    "avatar": "Foto de Perfil",
-    "changeAvatar": "Cambiar Avatar",
-    "removeAvatar": "Eliminar Avatar"
+    "title": "Información del perfil",
+    "description": "Actualiza tu información personal y preferencias",
+    "nameLabel": "Nombre completo *",
+    "namePlaceholder": "Juan Pérez",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "correo@ejemplo.com",
+    "save": "Guardar cambios",
+    "unsavedChanges": "Tienes cambios sin guardar",
+    "errorTitle": "Error al cargar el perfil",
+    "errorDescription": "No se pudo cargar el perfil. Intenta nuevamente."
+  },
+  "usage": {
+    "emailsSent": "Correos enviados",
+    "apiCalls": "Llamadas API",
+    "storageUsed": "Almacenamiento usado",
+    "thisMonth": "Este mes",
+    "limit": "Límite: {{value}}/mes",
+    "limitGB": "Límite: {{value}} GB",
+    "storageDescription": "Plantillas y registros"
   },
   "security": {
-    "title": "Seguridad",
-    "description": "Gestiona la configuración de seguridad de tu cuenta",
-    "currentPassword": "Contraseña Actual",
-    "newPassword": "Nueva Contraseña",
-    "confirmPassword": "Confirmar Nueva Contraseña",
-    "changePassword": "Cambiar Contraseña",
-    "passwordChanged": "Contraseña cambiada exitosamente"
+    "title": "Configuración de seguridad",
+    "description": "Administra las preferencias de seguridad de tu cuenta",
+    "inProgressLine1": "La configuración de seguridad se implementará en la siguiente fase.",
+    "inProgressLine2": "Esto incluirá cambio de contraseña, 2FA y gestión de sesiones."
   },
-  "preferences": {
-    "title": "Preferencias",
-    "description": "Personaliza tu experiencia",
-    "language": "Idioma",
-    "timezone": "Zona Horaria",
-    "notifications": "Notificaciones por Email",
-    "marketing": "Emails de Marketing",
-    "updates": "Actualizaciones del Producto"
-  },
-  "subscription": {
-    "title": "Suscripción",
-    "description": "Gestiona tu suscripción y facturación",
-    "currentPlan": "Plan Actual",
-    "usage": "Uso",
-    "billing": "Facturación",
-    "upgrade": "Actualizar Plan",
-    "cancel": "Cancelar Suscripción"
+  "common": {
+    "unlimited": "Ilimitado"
   }
 }

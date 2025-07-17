@@ -1,0 +1,18 @@
+{
+  "loginTitle": "Melden Sie sich bei Ihrem Konto an",
+  "loginDescription": "Geben Sie unten Ihre E-Mail ein, um sich anzumelden",
+  "emailLabel": "E-Mail",
+  "emailPlaceholder": "m@beispiel.com",
+  "passwordLabel": "Passwort",
+  "forgotPassword": "Passwort vergessen?",
+  "passwordPlaceholder": "**********",
+  "showPassword": "Passwort anzeigen",
+  "hidePassword": "Passwort verbergen",
+  "loggingIn": "Anmeldung läuft...",
+  "logIn": "Anmelden",
+  "loginError": "Fehler bei der Anmeldung",
+  "orContinueWith": "Oder fortfahren mit",
+  "loginWithGitHub": "Mit GitHub anmelden",
+  "noAccount": "Sie haben noch kein Konto?",
+  "signUp": "Registrieren"
+}

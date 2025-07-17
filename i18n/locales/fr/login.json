@@ -1,0 +1,18 @@
+{
+  "loginTitle": "Connectez-vous à votre compte",
+  "loginDescription": "Entrez votre e-mail ci-dessous pour vous connecter",
+  "emailLabel": "E-mail",
+  "emailPlaceholder": "m@exemple.com",
+  "passwordLabel": "Mot de passe",
+  "forgotPassword": "Mot de passe oublié ?",
+  "passwordPlaceholder": "**********",
+  "showPassword": "Afficher le mot de passe",
+  "hidePassword": "Cacher le mot de passe",
+  "loggingIn": "Connexion en cours...",
+  "logIn": "Se connecter",
+  "loginError": "Erreur de connexion",
+  "orContinueWith": "Ou continuer avec",
+  "loginWithGitHub": "Connexion avec GitHub",
+  "noAccount": "Vous n'avez pas de compte ?",
+  "signUp": "S'inscrire"
+}

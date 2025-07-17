@@ -12,13 +12,14 @@ import { TemplateSchemaType } from "@/dashboard/templates/schema/template.schema
 
 interface Props {
   watchedValues: TemplateSchemaType;
+  className?: string;
 }
 
-export const TemplatePreviewCard = ({ watchedValues }: Props) => {
+export const TemplatePreviewCard = ({ watchedValues, className }: Props) => {
   const { t } = useTemplatesTranslation();
 
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader>
         <CardTitle>{t("form.preview")}</CardTitle>
         <CardDescription>{t("form.previewDesc")}</CardDescription>

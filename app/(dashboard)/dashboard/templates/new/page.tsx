@@ -1,6 +1,6 @@
 "use client";
 
-import { NewTemplateHeader } from "@/dashboard/templates/components/NewTemplatePage/NewTemplateHeader";
+import { NewTemplateHeader } from "@/dashboard/templates/components/NewTemplateHeader";
 import { TemplateForm } from "@/dashboard/templates/components/TemplateForm/TemplateForm";
 
 export default function NewTemplatePage() {

@@ -11,15 +11,17 @@ import {
   useCommonTranslation,
   useTemplatesTranslation,
 } from "@/i18n/hooks/usei18n";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { toast } from "sonner";
 
 interface Props {
   id?: string;
   isDirty: boolean;
+  className?: string;
 }
 
-export const TemplateOptionsFooter = ({ id, isDirty }: Props) => {
+export const TemplateOptionsFooter = ({ id, isDirty, className }: Props) => {
   const { t } = useTemplatesTranslation();
   const { t: tCommon } = useCommonTranslation();
   const updateTemplateMutation = useUpdateTemplate();
@@ -51,7 +53,7 @@ export const TemplateOptionsFooter = ({ id, isDirty }: Props) => {
   };
 
   return (
-    <div className="flex items-center gap-2 pt-6">
+    <div className={cn("flex items-center gap-2 pt-6", className)}>
       <SaveButton
         disabled={!isDirty || updateTemplateMutation.isPending}
         isLoading={updateTemplateMutation.isPending}

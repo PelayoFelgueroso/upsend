@@ -1,0 +1,18 @@
+{
+  "loginTitle": "Login to your account",
+  "loginDescription": "Enter your email below to login to your account",
+  "emailLabel": "Email",
+  "emailPlaceholder": "m@example.com",
+  "passwordLabel": "Password",
+  "forgotPassword": "Forgot your password?",
+  "passwordPlaceholder": "**********",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password",
+  "loggingIn": "Logging in...",
+  "logIn": "Log In",
+  "loginError": "Error logging in",
+  "orContinueWith": "Or continue with",
+  "loginWithGitHub": "Login with GitHub",
+  "noAccount": "Don't have an account?",
+  "signUp": "Sign up"
+}

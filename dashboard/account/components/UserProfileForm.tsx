@@ -24,6 +24,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { useI18n } from "@/i18n/hooks/usei18n";
 
 const profileSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -34,6 +35,7 @@ const profileSchema = z.object({
 type ProfileFormData = z.infer<typeof profileSchema>;
 
 export function UserProfileForm() {
+  const { t } = useI18n("account");
   const { data: user, isLoading, error } = useUser();
   const updateUserMutation = useUpdateUser();
 
@@ -76,9 +78,9 @@ export function UserProfileForm() {
     return (
       <Card className="card-warning">
         <CardHeader>
-          <CardTitle className="text-warning">Error Loading Profile</CardTitle>
+          <CardTitle className="text-warning">{t("profile.errorTitle")}</CardTitle>
           <CardDescription>
-            {error.message || "Failed to load user profile. Please try again."}
+            {error.message || t("profile.errorDescription")}
           </CardDescription>
         </CardHeader>
       </Card>
@@ -86,7 +88,13 @@ export function UserProfileForm() {
   }
 
   if (!user) {
-    return null;
+    return (
+      <Card className="card-warning">
+        <CardHeader>
+          <CardTitle className="text-warning">{t("profile.errorTitle")}</CardTitle>
+        </CardHeader>
+      </Card>
+    );
   }
 
   return (
@@ -94,11 +102,9 @@ export function UserProfileForm() {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-          Profile Information
+          {t("profile.title")}
         </CardTitle>
-        <CardDescription>
-          Update your personal information and preferences
-        </CardDescription>
+        <CardDescription>{t("profile.description")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Profile Form */}
@@ -110,10 +116,10 @@ export function UserProfileForm() {
                 name="name"
                 render={({ field }) => (
                   <FormItem className="space-y-2">
-                    <FormLabel>Full Name *</FormLabel>
+                    <FormLabel>{t("profile.nameLabel")} *</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="John Doe"
+                        placeholder={t("profile.namePlaceholder")}
                         {...field}
                         required
                         autoComplete="name"
@@ -130,10 +136,10 @@ export function UserProfileForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem className="space-y-2">
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>{t("profile.emailLabel")}</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="m@example.com"
+                        placeholder={t("profile.emailPlaceholder")}
                         {...field}
                         required
                         autoComplete="email"
@@ -157,11 +163,11 @@ export function UserProfileForm() {
                 ) : (
                   <Save className="mr-2 h-4 w-4" />
                 )}
-                Save Changes
+                {t("profile.save")}
               </Button>
               {isDirty && (
                 <p className="text-sm text-muted-foreground">
-                  You have unsaved changes
+                  {t("profile.unsavedChanges")}
                 </p>
               )}
             </div>

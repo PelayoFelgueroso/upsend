@@ -49,5 +49,11 @@
     "minLength": "Debe tener al menos {{count}} caracteres",
     "maxLength": "No debe tener más de {{count}} caracteres",
     "passwordMatch": "Las contraseñas no coinciden"
+  },
+  "pagination": {
+    "showing": "Mostrando de {{from}} a {{to}} de {{total}} registros",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "page": "Página {{current}} de {{totalPages}}"
   }
 }
