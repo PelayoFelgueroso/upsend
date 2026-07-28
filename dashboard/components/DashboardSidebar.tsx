@@ -159,7 +159,7 @@ export function DashboardSidebar() {
             <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
             <span>All systems operational</span>
           </div>
-          <div className="mt-1">© 2025 EmailManager</div>
+          <div className="mt-1">© 2026 EmailManager</div>
         </div>
       </SidebarFooter>
     </Sidebar>

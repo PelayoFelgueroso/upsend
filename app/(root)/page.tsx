@@ -137,7 +137,7 @@ const testimonials = [
   },
 ];
 
-const codeExample = `import { EasyMailJS } from 'email-app-pelayo';
+const codeExample = `import { EasyMailJS } from 'upsend-js';
 
 const emailClient = new EasyMailJS(
   'your-api-key',
@@ -390,7 +390,7 @@ export default function LandingPage() {
                       size="sm"
                       variant="outline"
                       onClick={() =>
-                        copyToClipboard("npm install email-app-pelayo")
+                        copyToClipboard("npm install upsend-js")
                       }
                       className="bg-transparent hover:bg-primary/10"
                     >
@@ -441,7 +441,7 @@ export default function LandingPage() {
                       <div className="relative">
                         <pre className="bg-muted/50 p-4 rounded-lg text-sm overflow-x-auto border">
                           <code className="text-primary font-mono">
-                            npm install email-app-pelayo
+                            npm install upsend-js
                           </code>
                         </pre>
                       </div>

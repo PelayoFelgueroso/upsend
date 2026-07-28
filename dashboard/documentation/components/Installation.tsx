@@ -25,13 +25,13 @@ export const Installation = () => {
       <CardContent className="space-y-4">
         <div className="relative">
           <pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
-            <code>npm install email-app-pelayo</code>
+            <code>npm install upsend-js</code>
           </pre>
           <Button
             size="sm"
             variant="ghost"
             className="absolute top-2 right-2"
-            onClick={() => copyToClipboard("npm install email-app-pelayo")}
+            onClick={() => copyToClipboard("npm install upsend-js")}
           >
             <Copy className="h-4 w-4" />
           </Button>

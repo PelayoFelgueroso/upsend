@@ -93,7 +93,7 @@ export const TemplateForm = ({ template, id }: Props) => {
     <Form {...form}>
       <form onSubmit={handleSubmit(handleSave)}>
         <div className="grid gap-6 lg:grid-cols-2">
-          <TemplateDetailsCard control={control} className="lg:order-0" />
+          <TemplateDetailsCard control={control} className="lg:order-0" templateId={id} />
 
           <TemplateContentCard
             control={control}

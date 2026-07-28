@@ -25,6 +25,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useI18n } from "@/i18n/hooks/usei18n";
+import { Copy, Check } from "lucide-react";
+import { useState } from "react";
 
 const profileSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -38,6 +40,15 @@ export function UserProfileForm() {
   const { t } = useI18n("account");
   const { data: user, isLoading, error } = useUser();
   const updateUserMutation = useUpdateUser();
+  const [copied, setCopied] = useState(false);
+
+  const copySecretKey = () => {
+    if (user?.id) {
+      navigator.clipboard.writeText(user.id);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   const form = useForm<ProfileFormData>({
     resolver: zodResolver(profileSchema),
@@ -173,6 +184,38 @@ export function UserProfileForm() {
             </div>
           </form>
         </Form>
+
+        {/* Secret Key Section */}
+        <div className="border-t pt-6">
+          <div className="space-y-3">
+            <div>
+              <h3 className="font-medium">{t("profile.secretKeyLabel")}</h3>
+              <p className="text-sm text-muted-foreground">
+                {t("profile.secretKeyDescription")}
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Input
+                value={user?.id || ""}
+                readOnly
+                className="font-mono text-sm"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                onClick={copySecretKey}
+                title={t("profile.copySecretKey")}
+              >
+                {copied ? (
+                  <Check className="h-4 w-4" />
+                ) : (
+                  <Copy className="h-4 w-4" />
+                )}
+              </Button>
+            </div>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );

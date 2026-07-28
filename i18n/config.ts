@@ -40,7 +40,7 @@ i18n
 
     // Namespaces
     defaultNS: "common",
-    ns: ["common", "dashboard", "auth", "settings", "templates", "validation"],
+    ns: ["common", "dashboard", "auth", "settings", "templates", "account", "validation"],
   });
 
 export default i18n;

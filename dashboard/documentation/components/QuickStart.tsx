@@ -15,7 +15,7 @@ const steps = [
   },
   {
     title: "Install Package",
-    description: "Install the email-app-pelayo npm package",
+    description: "Install the upsend-js npm package",
   },
   {
     title: "Send Emails",

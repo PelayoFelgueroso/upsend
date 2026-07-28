@@ -15,6 +15,10 @@
   "form": {
     "templateDetails": "Détails du Modèle",
     "templateDetailsDesc": "Informations de base sur votre modèle d'email",
+    "templateId": "ID du Modèle",
+    "templateIdDescription": "Identifiant unique de ce modèle. Utilisez cet ID dans les requêtes API.",
+    "copyTemplateId": "Copier l'ID du modèle",
+    "templateIdCopied": "ID du modèle copié dans le presse-papiers",
     "templateName": "Nom du Modèle",
     "templateNamePlaceholder": "Saisissez le nom du modèle",
     "emailSubject": "Objet de l'Email",

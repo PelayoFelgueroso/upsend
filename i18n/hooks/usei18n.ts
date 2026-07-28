@@ -30,3 +30,4 @@ export const useDashboardTranslation = () => useI18n("dashboard");
 export const useAuthTranslation = () => useI18n("auth");
 export const useSettingsTranslation = () => useI18n("settings");
 export const useTemplatesTranslation = () => useI18n("templates");
+export const useAccountTranslation = () => useI18n("account");

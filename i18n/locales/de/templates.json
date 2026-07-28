@@ -15,6 +15,10 @@
   "form": {
     "templateDetails": "Vorlagen-Details",
     "templateDetailsDesc": "Grundlegende Informationen zu Ihrer E-Mail-Vorlage",
+    "templateId": "Vorlagen-ID",
+    "templateIdDescription": "Eindeutige Kennung für diese Vorlage. Verwenden Sie diese ID in API-Anfragen.",
+    "copyTemplateId": "Vorlagen-ID kopieren",
+    "templateIdCopied": "Vorlagen-ID in die Zwischenablage kopiert",
     "templateName": "Vorlagenname",
     "templateNamePlaceholder": "Vorlagenname eingeben",
     "emailSubject": "E-Mail-Betreff",

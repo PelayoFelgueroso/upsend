@@ -15,6 +15,10 @@
   "form": {
     "templateDetails": "Detalles de la Plantilla",
     "templateDetailsDesc": "Información básica sobre tu plantilla de email",
+    "templateId": "ID de la Plantilla",
+    "templateIdDescription": "Identificador único para esta plantilla. Utiliza este ID en solicitudes de API.",
+    "copyTemplateId": "Copiar ID de la Plantilla",
+    "templateIdCopied": "ID de la plantilla copiado al portapapeles",
     "templateName": "Nombre de la Plantilla",
     "templateNamePlaceholder": "Ingresa el nombre de la plantilla",
     "emailSubject": "Asunto del Email",

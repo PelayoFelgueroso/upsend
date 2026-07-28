@@ -27,14 +27,27 @@ import { useTemplatesTranslation } from "@/i18n/hooks/usei18n";
 import { Control } from "react-hook-form";
 import { TemplateSchemaType } from "@/dashboard/templates/schema/template.schema";
 import { RadioButtonField } from "@/dashboard/components/RadioButtonField";
+import { Copy, Check } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   control: Control<TemplateSchemaType>;
   className?: string;
+  templateId?: string;
 }
 
-export const TemplateDetailsCard = ({ control, className }: Props) => {
+export const TemplateDetailsCard = ({ control, className, templateId }: Props) => {
   const { t } = useTemplatesTranslation();
+  const [copied, setCopied] = useState(false);
+
+  const copyTemplateId = () => {
+    if (templateId) {
+      navigator.clipboard.writeText(templateId);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   const templateTypeOptions = [
     {
@@ -84,6 +97,37 @@ export const TemplateDetailsCard = ({ control, className }: Props) => {
         <CardDescription>{t("form.templateDetailsDesc")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
+        {templateId && (
+          <div className="space-y-2 p-3 bg-muted rounded-lg">
+            <div>
+              <FormLabel className="text-sm">{t("form.templateId")}</FormLabel>
+              <p className="text-xs text-muted-foreground mt-1">
+                {t("form.templateIdDescription")}
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Input
+                value={templateId}
+                readOnly
+                className="font-mono text-sm"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                onClick={copyTemplateId}
+                title={t("form.copyTemplateId")}
+              >
+                {copied ? (
+                  <Check className="h-4 w-4" />
+                ) : (
+                  <Copy className="h-4 w-4" />
+                )}
+              </Button>
+            </div>
+          </div>
+        )}
+
         <FormField
           control={control}
           name="name"

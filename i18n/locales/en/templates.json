@@ -15,6 +15,10 @@
   "form": {
     "templateDetails": "Template Details",
     "templateDetailsDesc": "Basic information about your email template",
+    "templateId": "Template ID",
+    "templateIdDescription": "Unique identifier for this template. Use this ID in API requests.",
+    "copyTemplateId": "Copy Template ID",
+    "templateIdCopied": "Template ID copied to clipboard",
     "templateName": "Template Name",
     "templateNamePlaceholder": "Enter template name",
     "emailSubject": "Email Subject",
